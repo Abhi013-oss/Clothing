@@ -272,24 +272,18 @@ export default function CartPage() {
               </div>
 
               {/* Dominant Action: Order on WhatsApp */}
-              {whatsappUrl ? (
-                <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => {
-                    trackWhatsAppDispatch({ source: 'cart', itemCount: totalItemCount });
-                  }}
-                  className="w-full flex items-center justify-center gap-2.5 py-4 px-6 rounded-sm bg-brand-whatsapp text-white font-sans text-sm font-semibold tracking-wider hover:bg-brand-whatsappHover transition-colors shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-whatsapp"
-                >
-                  <MessageCircle className="w-4 h-4" />
-                  <span>SEND SELECTION ON WHATSAPP</span>
-                </a>
-              ) : (
-                <div className="p-3 bg-canvas-muted rounded-sm text-xs text-ink-secondary text-center">
-                  Store assistance: Call {siteConfig.contact.primaryPhone || 'Chilbila Store'}
-                </div>
-              )}
+              <a
+                href={whatsappUrl || `https://wa.me/919415160862?text=${encodeURIComponent(whatsappMessage)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => {
+                  trackWhatsAppDispatch({ source: 'cart', itemCount: totalItemCount });
+                }}
+                className="w-full flex items-center justify-center gap-2.5 py-4 px-6 rounded-sm bg-brand-whatsapp text-white font-sans text-sm font-semibold tracking-wider hover:bg-brand-whatsappHover transition-colors shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-whatsapp"
+              >
+                <MessageCircle className="w-4 h-4" />
+                <span>SEND SELECTION ON WHATSAPP</span>
+              </a>
 
               {/* Physical Fulfillment Notes */}
               <div className="pt-4 border-t border-ink-border/60 space-y-2 text-xs text-ink-secondary">

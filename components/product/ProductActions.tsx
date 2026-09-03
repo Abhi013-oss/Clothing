@@ -67,25 +67,19 @@ export default function ProductActions({ product }: ProductActionsProps) {
         </button>
 
         {/* Secondary High-Intent Action: Order on WhatsApp */}
-        {singleWhatsAppUrl ? (
-          <a
-            href={singleWhatsAppUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => {
-              trackWhatsAppDispatch({ source: 'product', productId: product.id });
-            }}
-            className="flex-1 flex items-center justify-center gap-2 py-4 px-6 rounded-sm bg-brand-whatsapp text-white font-sans text-sm font-semibold tracking-wider hover:bg-brand-whatsappHover hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-whatsapp"
-            aria-label="Order or enquire about this garment directly on WhatsApp"
-          >
-            <MessageCircle className="w-4 h-4" />
-            <span>ORDER ON WHATSAPP</span>
-          </a>
-        ) : (
-          <div className="flex-1 py-4 px-4 bg-canvas-muted rounded-sm text-xs text-ink-secondary text-center">
-            Store assistance: Call {siteConfig.contact.primaryPhone || 'Chilbila Store'}
-          </div>
-        )}
+        <a
+          href={singleWhatsAppUrl || `https://wa.me/919415160862?text=${encodeURIComponent(singleWhatsAppMessage)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => {
+            trackWhatsAppDispatch({ source: 'product', productId: product.id });
+          }}
+          className="flex-1 flex items-center justify-center gap-2 py-4 px-6 rounded-sm bg-brand-whatsapp text-white font-sans text-sm font-semibold tracking-wider hover:bg-brand-whatsappHover hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-whatsapp"
+          aria-label="Order or enquire about this garment directly on WhatsApp"
+        >
+          <MessageCircle className="w-4 h-4" />
+          <span>ORDER ON WHATSAPP</span>
+        </a>
       </div>
 
       {/* Store Consultation & Fulfillment Reassurance */}
@@ -126,18 +120,19 @@ export default function ProductActions({ product }: ProductActionsProps) {
             {isAdded ? '✓ Added' : 'Add to Bag'}
           </button>
 
-          {singleWhatsAppUrl && (
-            <a
-              href={singleWhatsAppUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="py-3 px-4 rounded-sm bg-brand-whatsapp text-white text-xs font-semibold flex items-center gap-1.5 shadow-sm"
-              aria-label="WhatsApp"
-            >
-              <MessageCircle className="w-3.5 h-3.5" />
-              <span>WhatsApp</span>
-            </a>
-          )}
+          <a
+            href={singleWhatsAppUrl || `https://wa.me/919415160862?text=${encodeURIComponent(singleWhatsAppMessage)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => {
+              trackWhatsAppDispatch({ source: 'product', productId: product.id });
+            }}
+            className="py-3 px-4 rounded-sm bg-brand-whatsapp text-white text-xs font-semibold flex items-center gap-1.5 shadow-sm"
+            aria-label="Order on WhatsApp"
+          >
+            <MessageCircle className="w-3.5 h-3.5" />
+            <span>WhatsApp</span>
+          </a>
         </div>
       </div>
     </div>

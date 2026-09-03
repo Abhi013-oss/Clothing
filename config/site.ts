@@ -16,9 +16,9 @@ export const siteConfig: SiteSettings = {
     googleMapsUrl: 'https://www.google.com/maps/place/BANWARILAL+CLOTH+HOUSE/@25.9557296,82.0044568,922m/',
   },
   contact: {
-    // Read from environment variable or fallback to placeholder variable
-    whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '',
-    primaryPhone: process.env.NEXT_PUBLIC_PHONE_NUMBER || '',
+    // Read from environment variable or fallback to store merchant WhatsApp
+    whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '919415160862',
+    primaryPhone: process.env.NEXT_PUBLIC_PHONE_NUMBER || '+91 94151 60862',
     storeHours: 'Monday – Sunday • Chilbila Bazaar, Pratapgarh',
   },
   whatsappCartMode: 'names_and_qty',

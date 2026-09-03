@@ -192,24 +192,18 @@ export default function CartDrawer() {
             )}
 
             {/* Dominant Action: Order on WhatsApp */}
-            {whatsappUrl ? (
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => {
-                  trackWhatsAppDispatch({ source: 'cart', itemCount: totalItemCount });
-                }}
-                className="w-full flex items-center justify-center gap-2.5 py-3.5 px-6 rounded-sm bg-brand-whatsapp text-white font-sans text-sm font-semibold tracking-wide hover:bg-brand-whatsappHover transition-colors shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-whatsapp"
-              >
-                <MessageCircle className="w-4 h-4" />
-                <span>ORDER ON WHATSAPP</span>
-              </a>
-            ) : (
-              <div className="p-3 bg-canvas-muted rounded-sm text-xs text-ink-secondary text-center">
-                WhatsApp ordering is updating. Please call our Chilbila store directly.
-              </div>
-            )}
+            <a
+              href={whatsappUrl || `https://wa.me/919415160862?text=${encodeURIComponent(whatsappMessage)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                trackWhatsAppDispatch({ source: 'cart', itemCount: totalItemCount });
+              }}
+              className="w-full flex items-center justify-center gap-2.5 py-3.5 px-6 rounded-sm bg-brand-whatsapp text-white font-sans text-sm font-semibold tracking-wide hover:bg-brand-whatsappHover transition-colors shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-whatsapp"
+            >
+              <MessageCircle className="w-4 h-4" />
+              <span>ORDER ON WHATSAPP</span>
+            </a>
 
             {/* Link to Full /cart Page */}
             <Link

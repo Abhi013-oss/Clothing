@@ -3,10 +3,12 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Plus, Check, Eye } from 'lucide-react';
+import { Plus, Check, MessageCircle } from 'lucide-react';
 import { Product } from '@/types/product';
 import { formatPrice } from '@/lib/utils/formatters';
 import { useCart } from '@/context/CartContext';
+import { siteConfig } from '@/config/site';
+import { buildWhatsAppUrl, generateSingleProductMessage } from '@/lib/whatsapp/generator';
 
 interface ProductCardProps {
   product: Product;
@@ -20,6 +22,14 @@ export default function ProductCard({ product, variant = 'grid' }: ProductCardPr
   const primaryImage = product.images.find((img) => img.isPrimary) || product.images[0];
   const imageUrl = primaryImage ? primaryImage.imageUrl : '';
   const altText = primaryImage ? primaryImage.altText : product.name;
+
+  const whatsappUrl = buildWhatsAppUrl(
+    siteConfig.contact.whatsappNumber || '919415160862',
+    generateSingleProductMessage(
+      product,
+      typeof window !== 'undefined' ? window.location.origin : 'https://banwarilalclothhouse.com'
+    )
+  );
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -97,27 +107,41 @@ export default function ProductCard({ product, variant = 'grid' }: ProductCardPr
             )}
           </div>
 
-          <button
-            onClick={handleAddToCart}
-            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold ${
-              isAdded
-                ? 'bg-status-success text-white'
-                : 'bg-canvas-muted text-ink hover:bg-ink hover:text-white border border-ink-border/80'
-            }`}
-            aria-label={`Add ${product.name} to bag`}
-          >
-            {isAdded ? (
-              <>
-                <Check className="w-3.5 h-3.5" />
-                <span>Added</span>
-              </>
-            ) : (
-              <>
-                <Plus className="w-3.5 h-3.5" />
-                <span>Add</span>
-              </>
-            )}
-          </button>
+          <div className="flex items-center gap-1.5">
+            <a
+              href={whatsappUrl || `https://wa.me/919415160862?text=${encodeURIComponent(product.name)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="p-1.5 rounded-full bg-canvas-muted text-brand-whatsapp hover:bg-brand-whatsapp hover:text-white border border-ink-border/80 transition-all duration-200 flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-whatsapp"
+              title={`Order ${product.name} on WhatsApp`}
+              aria-label={`Order ${product.name} on WhatsApp`}
+            >
+              <MessageCircle className="w-3.5 h-3.5" />
+            </a>
+
+            <button
+              onClick={handleAddToCart}
+              className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold ${
+                isAdded
+                  ? 'bg-status-success text-white'
+                  : 'bg-canvas-muted text-ink hover:bg-ink hover:text-white border border-ink-border/80'
+              }`}
+              aria-label={`Add ${product.name} to bag`}
+            >
+              {isAdded ? (
+                <>
+                  <Check className="w-3.5 h-3.5" />
+                  <span>Added</span>
+                </>
+              ) : (
+                <>
+                  <Plus className="w-3.5 h-3.5" />
+                  <span>Add</span>
+                </>
+              )}
+            </button>
+          </div>
         </div>
       </div>
     </article>
