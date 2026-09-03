@@ -8,6 +8,7 @@ import { useCart } from '@/context/CartContext';
 import { siteConfig } from '@/config/site';
 import { formatPrice } from '@/lib/utils/formatters';
 import { buildWhatsAppUrl, generateCartMessage, trackWhatsAppDispatch } from '@/lib/whatsapp/generator';
+import { getProductFallbackImage } from '@/lib/images/productFallback';
 
 export default function CartDrawer() {
   const {
@@ -119,19 +120,13 @@ export default function CartDrawer() {
                     onClick={() => setIsOpen(false)}
                     className="relative w-20 aspect-[3/4] bg-canvas-sand rounded-sm overflow-hidden flex-shrink-0 border border-ink-border/60 hover:opacity-90 transition-opacity"
                   >
-                    {item.thumbnailUrl ? (
-                      <Image
-                        src={item.thumbnailUrl}
-                        alt={item.productName}
-                        fill
-                        className="object-cover"
-                        sizes="80px"
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center text-[10px] text-ink-muted">
-                        No image
-                      </div>
-                    )}
+                    <Image
+                      src={item.thumbnailUrl || getProductFallbackImage(item.productName)}
+                      alt={item.productName}
+                      fill
+                      className="object-cover"
+                      sizes="80px"
+                    />
                   </Link>
 
                   {/* Info & Modifiers */}

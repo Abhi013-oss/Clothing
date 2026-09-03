@@ -4,6 +4,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { Maximize2, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { ProductImage } from '@/types/product';
+import { getProductFallbackImage } from '@/lib/images/productFallback';
 
 interface ProductGalleryProps {
   images: ProductImage[];
@@ -14,17 +15,23 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
-  // Safe fallback if images array is empty
-  const safeImages = images && images.length > 0 ? images : [
-    {
-      id: 'placeholder',
-      productId: 'placeholder',
-      imageUrl: '',
-      altText: productName,
-      displayOrder: 1,
-      isPrimary: true,
-    }
-  ];
+  // Safe fallback if images array is empty or has blank imageUrl
+  const fallbackUrl = getProductFallbackImage(productName);
+  const safeImages = images && images.length > 0 && images.some((img) => img.imageUrl)
+    ? images.map((img) => ({
+        ...img,
+        imageUrl: img.imageUrl || fallbackUrl,
+      }))
+    : [
+        {
+          id: 'fallback-1',
+          productId: 'fallback',
+          imageUrl: fallbackUrl,
+          altText: productName,
+          displayOrder: 1,
+          isPrimary: true,
+        },
+      ];
 
   const currentImage = safeImages[selectedIndex] || safeImages[0];
 

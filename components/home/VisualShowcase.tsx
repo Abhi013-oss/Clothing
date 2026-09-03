@@ -41,7 +41,7 @@ export default function VisualShowcase() {
           <div className="lg:col-span-6 grid grid-cols-2 gap-4 sm:gap-6">
             <div className="relative aspect-[3/4] rounded-sm overflow-hidden border border-white/20 bg-ink-hover">
               <Image
-                src="https://images.unsplash.com/photo-1610030469668-93510cb67655?auto=format&fit=crop&w=800&q=80"
+                src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80"
                 alt="Detailed handloom silk weave craftsmanship"
                 fill
                 className="object-cover"
@@ -50,7 +50,7 @@ export default function VisualShowcase() {
             </div>
             <div className="relative aspect-[3/4] rounded-sm overflow-hidden border border-white/20 bg-ink-hover mt-6 sm:mt-10">
               <Image
-                src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80"
+                src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=800&q=80"
                 alt="Fine suiting fabric drape and texture"
                 fill
                 className="object-cover"

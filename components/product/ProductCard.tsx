@@ -9,6 +9,7 @@ import { formatPrice } from '@/lib/utils/formatters';
 import { useCart } from '@/context/CartContext';
 import { siteConfig } from '@/config/site';
 import { buildWhatsAppUrl, generateSingleProductMessage } from '@/lib/whatsapp/generator';
+import { getProductFallbackImage } from '@/lib/images/productFallback';
 
 interface ProductCardProps {
   product: Product;
@@ -19,9 +20,11 @@ export default function ProductCard({ product, variant = 'grid' }: ProductCardPr
   const { addItem } = useCart();
   const [isAdded, setIsAdded] = useState(false);
 
-  const primaryImage = product.images.find((img) => img.isPrimary) || product.images[0];
-  const imageUrl = primaryImage ? primaryImage.imageUrl : '';
-  const altText = primaryImage ? primaryImage.altText : product.name;
+  const primaryImage = product.images?.find((img) => img.isPrimary) || product.images?.[0];
+  const imageUrl = (primaryImage && primaryImage.imageUrl)
+    ? primaryImage.imageUrl
+    : getProductFallbackImage(product.name, product.categoryName);
+  const altText = primaryImage?.altText || product.name;
 
   const whatsappUrl = buildWhatsAppUrl(
     siteConfig.contact.whatsappNumber || '919415160862',

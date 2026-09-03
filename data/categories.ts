@@ -54,7 +54,7 @@ export const categories: Category[] = [
     name: 'Fabrics & Textiles',
     slug: 'fabrics',
     description: 'Premium unstitched cloth pieces, suiting, and shirting textiles.',
-    imageUrl: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=800&q=80',
     displayOrder: 5,
     isActive: true,
     productCount: 4,

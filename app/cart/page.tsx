@@ -20,6 +20,7 @@ import { useCart } from '@/context/CartContext';
 import { siteConfig } from '@/config/site';
 import { formatPrice } from '@/lib/utils/formatters';
 import { buildWhatsAppUrl, generateCartMessage, trackWhatsAppDispatch } from '@/lib/whatsapp/generator';
+import { getProductFallbackImage } from '@/lib/images/productFallback';
 
 export default function CartPage() {
   const {
@@ -150,19 +151,13 @@ export default function CartPage() {
                     href={`/products/${item.productSlug}`}
                     className="relative w-24 sm:w-28 aspect-[3/4] rounded-sm overflow-hidden bg-canvas-sand border border-ink-border/60 flex-shrink-0 group"
                   >
-                    {item.thumbnailUrl ? (
-                      <Image
-                        src={item.thumbnailUrl}
-                        alt={item.productName}
-                        fill
-                        className="object-cover transition-transform duration-300 group-hover:scale-105"
-                        sizes="(max-width: 640px) 96px, 112px"
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center text-[10px] text-ink-muted">
-                        No image
-                      </div>
-                    )}
+                    <Image
+                      src={item.thumbnailUrl || getProductFallbackImage(item.productName)}
+                      alt={item.productName}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      sizes="(max-width: 640px) 96px, 112px"
+                    />
                   </Link>
 
                   {/* Garment Details & Controls */}
