@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --raw-canvas-ivory: #FAF8F5;
+    --raw-studio-white: #FFFFFF;
+    --raw-linen-beige: #EFECE6;
+    --raw-sand-border: #E5E0D8;
+    --raw-charcoal-900: #18181B;
+    --raw-taupe-500: #716E68;
+    --raw-champagne-gold: #C5A880;
+    --raw-whatsapp-emerald: #25D366;
+    
+    --shadow-card-rest: 0 1px 3px 0 rgba(24, 24, 27, 0.04), 0 1px 2px -1px rgba(24, 24, 27, 0.03);
+    --shadow-card-hover: 0 12px 28px -6px rgba(24, 24, 27, 0.08), 0 4px 10px -2px rgba(24, 24, 27, 0.04);
+    --shadow-drawer: -8px 0 32px -4px rgba(24, 24, 27, 0.12);
+
+    --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  body {
+    background-color: var(--raw-canvas-ivory);
+    color: var(--raw-charcoal-900);
+    overflow-x: hidden;
+  }
+}
+
+/* Reduced Motion Compliance */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    transform: none !important;
+  }
+}
