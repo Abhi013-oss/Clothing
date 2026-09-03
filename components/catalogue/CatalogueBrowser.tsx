@@ -316,7 +316,7 @@ export default function CatalogueBrowser({
           <div className="flex flex-wrap items-center gap-2">
             {search && (
               <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-canvas-muted border border-ink-border text-ink">
-                <span>"{search}"</span>
+                <span>&ldquo;{search}&rdquo;</span>
                 <button
                   onClick={() => handleSearchChange('')}
                   className="hover:text-status-error"

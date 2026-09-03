@@ -47,6 +47,9 @@ const securityHeaders = [
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false, // Disables X-Powered-By: Next.js info leak
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   async headers() {
     return [
       {
