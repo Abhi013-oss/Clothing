@@ -88,16 +88,26 @@ export default function CartPage() {
 
       {/* Editorial Page Header */}
       <div className="mb-10 pb-6 border-b border-ink-border/60 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-        <div>
-          <span className="font-sans text-xs uppercase tracking-widest text-accent-gold font-semibold">
-            Order Review
-          </span>
-          <h1 className="font-serif text-3xl sm:text-5xl font-medium text-ink mt-2">
-            Your Curated Selection
-          </h1>
-          <p className="font-sans text-sm sm:text-base text-ink-secondary mt-2 max-w-xl">
-            Review your pieces before connecting with our store team. All orders and custom sizing are personally confirmed on WhatsApp.
-          </p>
+        <div className="flex items-start gap-4">
+          <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden border border-ink-border shadow-sm bg-white flex-shrink-0 mt-1">
+            <Image
+              src="/images/logo.png"
+              alt="Banwari Lal Cloth House Official Seal"
+              fill
+              className="object-contain"
+            />
+          </div>
+          <div>
+            <span className="font-sans text-xs uppercase tracking-widest text-accent-gold font-semibold">
+              Order Review • Banwari Lal Cloth House
+            </span>
+            <h1 className="font-serif text-3xl sm:text-5xl font-medium text-ink mt-1">
+              Your Curated Selection
+            </h1>
+            <p className="font-sans text-sm sm:text-base text-ink-secondary mt-2 max-w-xl">
+              Review your pieces before connecting with our store team. All orders and custom sizing are personally confirmed on WhatsApp.
+            </p>
+          </div>
         </div>
 
         {items.length > 0 && (

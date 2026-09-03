@@ -61,11 +61,23 @@ export default function CartDrawer() {
       <div className="fixed inset-y-0 right-0 w-full max-w-md bg-canvas shadow-drawer flex flex-col justify-between z-50 transition-transform duration-300 ease-editorial">
         {/* Drawer Header */}
         <div className="p-6 border-b border-ink-border flex items-center justify-between">
-          <div className="flex items-center gap-2.5">
-            <ShoppingBag className="w-5 h-5 text-ink" />
-            <h2 className="font-serif text-xl font-medium text-ink">
-              Your Curated Bag ({totalItemCount})
-            </h2>
+          <div className="flex items-center gap-3">
+            <div className="relative w-8 h-8 rounded-full overflow-hidden border border-ink-border shadow-sm bg-white flex-shrink-0">
+              <Image
+                src="/images/logo.png"
+                alt="Banwari Lal Cloth House Logo"
+                fill
+                className="object-contain"
+              />
+            </div>
+            <div>
+              <h2 className="font-serif text-lg font-medium text-ink leading-none">
+                Curated Bag ({totalItemCount})
+              </h2>
+              <span className="font-sans text-[10px] text-ink-secondary tracking-wider uppercase">
+                {siteConfig.businessName}
+              </span>
+            </div>
           </div>
           <button
             onClick={() => setIsOpen(false)}

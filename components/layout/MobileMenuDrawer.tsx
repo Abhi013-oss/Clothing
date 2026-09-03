@@ -2,6 +2,7 @@
 
 import React, { useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { X, MapPin, Phone, MessageCircle, ArrowRight } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 import { buildWhatsAppUrl, generateGeneralEnquiryMessage } from '@/lib/whatsapp/generator';
@@ -54,13 +55,23 @@ export default function MobileMenuDrawer({ isOpen, onClose }: MobileMenuDrawerPr
         {/* Drawer Header */}
         <div>
           <div className="flex items-center justify-between pb-6 border-b border-ink-border">
-            <div className="flex flex-col">
-              <span className="font-serif text-lg font-medium text-ink tracking-wide">
-                BANWARILAL
-              </span>
-              <span className="font-sans text-[10px] tracking-widest text-ink-secondary uppercase">
-                Cloth House • Est. 2003
-              </span>
+            <div className="flex items-center gap-3">
+              <div className="relative w-10 h-10 rounded-full overflow-hidden border border-ink-border/80 shadow-sm bg-white flex-shrink-0">
+                <Image
+                  src="/images/logo.png"
+                  alt="Banwari Lal Cloth House Official Logo"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-serif text-base font-medium text-ink tracking-wide">
+                  BANWARILAL
+                </span>
+                <span className="font-sans text-[10px] tracking-widest text-ink-secondary uppercase">
+                  Cloth House • Est. 2003
+                </span>
+              </div>
             </div>
             <button
               onClick={onClose}

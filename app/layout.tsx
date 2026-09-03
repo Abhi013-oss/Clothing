@@ -33,6 +33,19 @@ export const metadata: Metadata = {
     siteName: siteConfig.businessName,
     locale: 'en_IN',
     type: 'website',
+    images: [
+      {
+        url: '/images/logo.png',
+        width: 512,
+        height: 512,
+        alt: `${siteConfig.businessName} Official Logo`,
+      },
+    ],
+  },
+  icons: {
+    icon: '/images/logo.png',
+    shortcut: '/images/logo.png',
+    apple: '/images/logo.png',
   },
   robots: {
     index: true,
@@ -50,6 +63,8 @@ export default function RootLayout({
     '@type': 'ClothingStore',
     name: siteConfig.businessName,
     description: siteConfig.tagline,
+    logo: 'https://banwarilalclothhouse.com/images/logo.png',
+    image: 'https://banwarilalclothhouse.com/images/logo.png',
     foundingDate: siteConfig.establishedYear.toString(),
     address: {
       '@type': 'PostalAddress',

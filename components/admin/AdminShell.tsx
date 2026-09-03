@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import {
   LayoutDashboard,
@@ -41,20 +42,30 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
   ];
 
   return (
-    <div className="min-h-screen bg-canvas-sand/30 flex flex-col">
+    <div className="min-h-screen bg-canvas-sand/30 flex flex-col font-sans">
       {/* Admin Top Navigation Bar */}
       <header className="bg-canvas-pure border-b border-ink-border sticky top-0 z-30 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo / Brand Title */}
             <div className="flex items-center gap-6">
-              <Link href="/admin" className="flex flex-col">
-                <span className="font-serif text-base font-semibold text-ink tracking-wide">
-                  BANWARILAL
-                </span>
-                <span className="font-sans text-[9px] tracking-widest text-accent-gold uppercase font-bold">
-                  Merchant Console
-                </span>
+              <Link href="/admin" className="flex items-center gap-2.5">
+                <div className="relative w-8 h-8 rounded-full overflow-hidden border border-ink-border shadow-sm bg-white flex-shrink-0">
+                  <Image
+                    src="/images/logo.png"
+                    alt="Banwari Lal Cloth House Logo"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <span className="font-serif text-base font-semibold text-ink tracking-wide leading-tight">
+                    BANWARILAL
+                  </span>
+                  <span className="font-sans text-[9px] tracking-widest text-accent-gold uppercase font-bold">
+                    Merchant Console
+                  </span>
+                </div>
               </Link>
 
               {/* Navigation Links */}

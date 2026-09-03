@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { Lock, Mail, ArrowRight, AlertCircle } from 'lucide-react';
 import { createClient } from '@/lib/supabase/client';
 
@@ -41,6 +42,15 @@ export default function AdminLoginPage() {
   return (
     <div className="min-h-screen bg-canvas-muted flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center">
+        <div className="mx-auto w-16 h-16 rounded-full overflow-hidden border border-ink-border shadow-sm bg-white mb-3 relative">
+          <Image
+            src="/images/logo.png"
+            alt="Banwari Lal Cloth House Logo"
+            fill
+            className="object-contain"
+            priority
+          />
+        </div>
         <span className="font-serif text-2xl sm:text-3xl font-medium tracking-wide text-ink">
           BANWARILAL
         </span>

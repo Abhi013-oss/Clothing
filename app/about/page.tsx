@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { siteConfig } from '@/config/site';
 
 export const metadata = {
@@ -13,9 +14,28 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
-      <span className="font-sans text-xs uppercase tracking-widest text-accent-gold font-semibold">
-        Established {siteConfig.establishedYear}
-      </span>
+      <div className="flex items-center gap-4 mb-6">
+        <div className="relative w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 rounded-full overflow-hidden border border-ink-border/80 shadow-md bg-white">
+          <Image
+            src="/images/logo.png"
+            alt="Banwari Lal Cloth House Official Seal"
+            fill
+            className="object-contain"
+            priority
+          />
+        </div>
+        <div>
+          <span className="font-sans text-xs uppercase tracking-widest text-accent-gold font-semibold block">
+            Established {siteConfig.establishedYear}
+          </span>
+          <span className="font-serif text-lg sm:text-xl font-medium text-ink block">
+            {siteConfig.businessName}
+          </span>
+          <span className="font-sans text-xs text-ink-secondary">
+            Chilbila, Pratapgarh, Uttar Pradesh
+          </span>
+        </div>
+      </div>
       <h1 className="font-serif text-3xl sm:text-5xl font-medium text-ink mt-2 mb-6">
         Over 20 Years of Textile Tradition in Chilbila
       </h1>

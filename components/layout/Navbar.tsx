@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ShoppingBag, Menu, MessageCircle, Phone, MapPin } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { siteConfig } from '@/config/site';
@@ -37,17 +38,28 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
-            {/* Brand Masthead */}
+            {/* Brand Masthead with Official Logo */}
             <Link
               href="/"
-              className="group flex flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold rounded-sm"
+              className="group flex items-center gap-2.5 sm:gap-3.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold rounded-sm"
             >
-              <span className="font-serif text-xl sm:text-2xl lg:text-3xl font-medium tracking-[0.06em] text-ink uppercase transition-colors group-hover:text-ink-hover">
-                {siteConfig.businessName}
-              </span>
-              <span className="font-sans text-[10px] sm:text-xs tracking-[0.14em] uppercase text-ink-secondary mt-0.5">
-                Chilbila, Pratapgarh • Est. {siteConfig.establishedYear}
-              </span>
+              <div className="relative w-10 h-10 sm:w-11 sm:h-11 flex-shrink-0 rounded-full overflow-hidden border border-ink-border/80 shadow-sm bg-white">
+                <Image
+                  src="/images/logo.png"
+                  alt="Banwari Lal Cloth House Official Logo"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-serif text-lg sm:text-xl lg:text-2xl font-medium tracking-[0.05em] text-ink uppercase transition-colors group-hover:text-ink-hover">
+                  {siteConfig.businessName}
+                </span>
+                <span className="font-sans text-[10px] sm:text-xs tracking-[0.14em] uppercase text-ink-secondary">
+                  Chilbila, Pratapgarh • Est. {siteConfig.establishedYear}
+                </span>
+              </div>
             </Link>
 
             {/* Desktop Navigation Links */}

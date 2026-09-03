@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { MapPin, Phone, MessageCircle, Navigation, Clock } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 import { buildWhatsAppUrl, generateGeneralEnquiryMessage } from '@/lib/whatsapp/generator';
@@ -30,17 +31,27 @@ export default function StoreLocationCard() {
                 We warmly invite you to visit our Chilbila store to feel the texture, drape the silks, and receive personalized tailoring and styling advice.
               </p>
 
-              {/* Exact Address Block */}
-              <div className="p-4 rounded-sm bg-canvas-sand/60 border border-ink-border/80 w-full mb-6">
-                <p className="font-serif text-base font-medium text-ink">
-                  {siteConfig.businessName}
-                </p>
-                <p className="font-sans text-sm text-ink-secondary mt-1">
-                  {siteConfig.address.street}, {siteConfig.address.city}, {siteConfig.address.state} – {siteConfig.address.postalCode}, {siteConfig.address.country}
-                </p>
-                <div className="flex items-center gap-2 mt-3 pt-3 border-t border-ink-border/60 text-xs text-ink-secondary">
-                  <Clock className="w-3.5 h-3.5 text-accent-gold" />
-                  <span>{siteConfig.contact.storeHours}</span>
+              {/* Exact Address Block with Official Logo Badge */}
+              <div className="p-4 sm:p-5 rounded-sm bg-canvas-sand/60 border border-ink-border/80 w-full mb-6 flex items-start gap-4">
+                <div className="relative w-14 h-14 flex-shrink-0 rounded-full overflow-hidden border border-ink-border shadow-sm bg-white mt-0.5">
+                  <Image
+                    src="/images/logo.png"
+                    alt="Banwari Lal Cloth House Official Seal"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <div className="flex-1">
+                  <p className="font-serif text-base sm:text-lg font-medium text-ink">
+                    {siteConfig.businessName}
+                  </p>
+                  <p className="font-sans text-xs sm:text-sm text-ink-secondary mt-1">
+                    {siteConfig.address.street}, {siteConfig.address.city}, {siteConfig.address.state} – {siteConfig.address.postalCode}, {siteConfig.address.country}
+                  </p>
+                  <div className="flex items-center gap-2 mt-3 pt-3 border-t border-ink-border/60 text-xs text-ink-secondary">
+                    <Clock className="w-3.5 h-3.5 text-accent-gold" />
+                    <span>{siteConfig.contact.storeHours}</span>
+                  </div>
                 </div>
               </div>
 

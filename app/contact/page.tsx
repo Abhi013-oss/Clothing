@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { MapPin, Phone, MessageCircle, Navigation, Clock } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 import { buildWhatsAppUrl, generateGeneralEnquiryMessage } from '@/lib/whatsapp/generator';
@@ -20,9 +21,25 @@ export default function ContactPage() {
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
-      <span className="font-sans text-xs uppercase tracking-widest text-accent-gold font-semibold">
-        Physical Store & Inquiries
-      </span>
+      <div className="flex items-center gap-4 mb-6">
+        <div className="relative w-14 h-14 sm:w-16 sm:h-16 flex-shrink-0 rounded-full overflow-hidden border border-ink-border/80 shadow-md bg-white">
+          <Image
+            src="/images/logo.png"
+            alt="Banwari Lal Cloth House Official Seal"
+            fill
+            className="object-contain"
+            priority
+          />
+        </div>
+        <div>
+          <span className="font-sans text-xs uppercase tracking-widest text-accent-gold font-semibold block">
+            Physical Store & Inquiries
+          </span>
+          <span className="font-serif text-lg sm:text-xl font-medium text-ink block">
+            {siteConfig.businessName}
+          </span>
+        </div>
+      </div>
       <h1 className="font-serif text-3xl sm:text-5xl font-medium text-ink mt-2 mb-6">
         Visit or Contact Our Chilbila Store
       </h1>

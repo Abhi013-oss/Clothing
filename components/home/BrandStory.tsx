@@ -21,14 +21,24 @@ export default function BrandStory() {
               />
             </div>
 
-            {/* Overlapping Floating Badge */}
-            <div className="absolute -bottom-6 -right-2 sm:-right-6 bg-canvas-pure p-5 rounded-sm border border-ink-border shadow-card-hover max-w-[220px]">
-              <span className="font-serif text-3xl font-medium text-ink">
-                20+
-              </span>
-              <p className="font-sans text-xs font-semibold text-ink-secondary mt-1 uppercase tracking-wider">
-                Years of Textile Trust in Chilbila
-              </p>
+            {/* Overlapping Floating Badge with Official Store Logo */}
+            <div className="absolute -bottom-6 -right-2 sm:-right-6 bg-canvas-pure p-4 sm:p-5 rounded-sm border border-ink-border shadow-card-hover max-w-[250px] flex items-center gap-3.5">
+              <div className="relative w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 rounded-full overflow-hidden border border-ink-border/80 shadow-sm bg-white">
+                <Image
+                  src="/images/logo.png"
+                  alt="Banwari Lal Cloth House Official Seal"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <div>
+                <span className="font-serif text-2xl sm:text-3xl font-medium text-ink block leading-none">
+                  20+
+                </span>
+                <p className="font-sans text-[11px] font-semibold text-ink-secondary mt-1 uppercase tracking-wider leading-tight">
+                  Years of Textile Trust in Chilbila
+                </p>
+              </div>
             </div>
           </div>
 

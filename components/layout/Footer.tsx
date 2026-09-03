@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { MapPin, Phone, MessageCircle, ArrowUpRight } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 import { categories } from '@/data/categories';
@@ -17,13 +18,23 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-ink-border/60">
           {/* Column 1: Brand & Heritage (Col 4) */}
           <div className="lg:col-span-4 flex flex-col items-start">
-            <Link href="/" className="group flex flex-col mb-4">
-              <span className="font-serif text-xl sm:text-2xl font-medium tracking-wide text-ink uppercase">
-                {siteConfig.businessName}
-              </span>
-              <span className="font-sans text-[11px] tracking-widest text-ink-secondary uppercase mt-0.5">
-                Chilbila, Pratapgarh • Est. {siteConfig.establishedYear}
-              </span>
+            <Link href="/" className="group flex items-center gap-3.5 mb-4">
+              <div className="relative w-12 h-12 flex-shrink-0 rounded-full overflow-hidden border border-ink-border/80 shadow-sm bg-white">
+                <Image
+                  src="/images/logo.png"
+                  alt="Banwari Lal Cloth House Official Logo"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-serif text-xl sm:text-2xl font-medium tracking-wide text-ink uppercase">
+                  {siteConfig.businessName}
+                </span>
+                <span className="font-sans text-[11px] tracking-widest text-ink-secondary uppercase mt-0.5">
+                  Chilbila, Pratapgarh • Est. {siteConfig.establishedYear}
+                </span>
+              </div>
             </Link>
             <p className="font-sans text-xs sm:text-sm text-ink-secondary leading-relaxed max-w-sm mb-6">
               A trusted physical cloth house and apparel retailer serving Pratapgarh since 2003. We specialize in fine handloom sarees, unstitched suit lengths, festive readymade garments, and menswear essentials.

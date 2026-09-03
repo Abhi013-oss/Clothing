@@ -60,10 +60,17 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Editorial Column: Typography & Intent */}
           <div className="lg:col-span-7 flex flex-col items-start z-10">
-            {/* Heritage Credential Eyebrow */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas-muted border border-ink-border/80 text-[11px] sm:text-xs font-semibold tracking-widest text-ink uppercase mb-5">
-              <Sparkles className="w-3 h-3 text-accent-gold" />
-              <span>Retail Excellence Since {siteConfig.establishedYear}</span>
+            {/* Heritage Credential Eyebrow with Official Store Crest */}
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-canvas-muted border border-ink-border/80 text-[11px] sm:text-xs font-semibold tracking-widest text-ink uppercase mb-5 shadow-sm">
+              <div className="relative w-5 h-5 rounded-full overflow-hidden border border-ink-border/60 bg-white flex-shrink-0">
+                <Image
+                  src="/images/logo.png"
+                  alt="Banwari Lal Cloth House Seal"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <span>Retail Excellence Since {siteConfig.establishedYear} • Chilbila</span>
             </div>
 
             {/* Main Display Headline */}
@@ -140,6 +147,18 @@ export default function HeroSection() {
                 className="object-cover transition-transform duration-700 ease-editorial hover:scale-105"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
               />
+
+              {/* Authentic Store Seal Stamp */}
+              <div className="absolute top-3.5 right-3.5 z-10 w-11 h-11 rounded-full overflow-hidden border border-ink-border/80 shadow-md bg-white/95 backdrop-blur-sm p-0.5">
+                <div className="relative w-full h-full rounded-full overflow-hidden">
+                  <Image
+                    src="/images/logo.png"
+                    alt="Banwari Lal Cloth House Official Seal"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+              </div>
 
               {/* Editorial Frame Overlay Tag */}
               <div className="absolute bottom-4 left-4 right-4 p-4 rounded-sm bg-canvas/90 backdrop-blur-md border border-ink-border/60">
