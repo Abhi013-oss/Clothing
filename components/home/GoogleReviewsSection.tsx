@@ -13,10 +13,10 @@ export default function GoogleReviewsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <ScrollReveal direction="down" delay={50}>
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12 border-b border-ink-border/60">
-            <div className="max-w-2xl">
+          <div className="flex flex-col md:flex-row items-center md:items-end justify-between text-center md:text-left gap-6 pb-12 border-b border-ink-border/60">
+            <div className="max-w-2xl mx-auto md:mx-0 flex flex-col items-center md:items-start">
               {/* Google Badge Eyebrow */}
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-canvas-pure border border-ink-border text-xs font-semibold text-ink uppercase tracking-wider mb-4 shadow-sm">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-canvas-pure border border-ink-border text-xs font-semibold text-ink uppercase tracking-wider mb-4 shadow-sm mx-auto md:mx-0">
                 <svg className="w-4 h-4" viewBox="0 0 24 24" aria-hidden="true">
                   <path
                     fill="#4285F4"
@@ -41,12 +41,12 @@ export default function GoogleReviewsSection() {
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium text-ink leading-tight">
                 Loved by Chilbila & Pratapgarh
               </h2>
-              <p className="font-sans text-sm sm:text-base text-ink-secondary mt-3">
+              <p className="font-sans text-sm sm:text-base text-ink-secondary mt-3 max-w-xl mx-auto md:mx-0">
                 Genuine experiences from our patrons who trust us for festive handloom sarees, unstitched suit lengths, and family clothing.
               </p>
 
               {/* Rating Metric Summary */}
-              <div className="flex flex-wrap items-center gap-3 sm:gap-4 mt-5">
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 sm:gap-4 mt-5">
                 <div className="flex items-center gap-1">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
@@ -60,7 +60,7 @@ export default function GoogleReviewsSection() {
             </div>
 
             {/* Primary Action Button: WRITE A GOOGLE REVIEW */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full md:w-auto">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center md:justify-end gap-3 w-full md:w-auto">
               <a
                 href={reviewUrl}
                 target="_blank"
@@ -90,11 +90,11 @@ export default function GoogleReviewsSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-12">
           {googleReviewsData.reviews.map((rev, index) => (
             <ScrollReveal key={rev.id} direction="up" delay={index * 90} distance={24}>
-              <div className="bg-canvas-pure p-6 sm:p-7 rounded-sm border border-ink-border shadow-card-rest hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between h-full">
+              <div className="bg-canvas-pure p-6 sm:p-7 rounded-sm border border-ink-border shadow-card-rest hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between h-full text-center sm:text-left">
                 <div>
                   {/* Reviewer Header */}
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-3">
+                  <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-3 mb-4">
+                    <div className="flex flex-col sm:flex-row items-center gap-3">
                       <div
                         className={`w-10 h-10 rounded-full ${rev.authorColor} text-white font-sans font-bold flex items-center justify-center text-sm shadow-sm flex-shrink-0`}
                       >
@@ -132,7 +132,7 @@ export default function GoogleReviewsSection() {
                   </div>
 
                   {/* Star Rating & Relative Time */}
-                  <div className="flex items-center gap-2 mb-3">
+                  <div className="flex items-center justify-center sm:justify-start gap-2 mb-3">
                     <div className="flex items-center gap-0.5">
                       {[...Array(rev.rating)].map((_, i) => (
                         <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
@@ -149,12 +149,12 @@ export default function GoogleReviewsSection() {
 
                 {/* Owner Response Block if Present */}
                 {rev.ownerResponse && (
-                  <div className="mt-5 pt-4 border-t border-ink-border/60 bg-canvas-sand/40 -mx-6 -mb-6 p-4 rounded-b-sm">
-                    <div className="flex items-center gap-1.5 text-xs font-semibold text-ink mb-1">
+                  <div className="mt-5 pt-4 border-t border-ink-border/60 bg-canvas-sand/40 -mx-6 -mb-6 p-4 rounded-b-sm text-center sm:text-left">
+                    <div className="flex items-center justify-center sm:justify-start gap-1.5 text-xs font-semibold text-ink mb-1">
                       <CheckCircle2 className="w-3.5 h-3.5 text-accent-gold" />
                       <span>Response from the owner ({rev.ownerResponse.relativeTime}):</span>
                     </div>
-                    <p className="font-sans text-xs text-ink-secondary italic pl-5">
+                    <p className="font-sans text-xs text-ink-secondary italic pl-0 sm:pl-5">
                       &ldquo;{rev.ownerResponse.text}&rdquo;
                     </p>
                   </div>

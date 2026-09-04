@@ -23,8 +23,8 @@ export default function ContactPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
       <ScrollReveal direction="up" delay={50}>
-        <div className="flex items-center gap-4 mb-6">
-          <div className="relative w-14 h-14 sm:w-16 sm:h-16 flex-shrink-0 rounded-full overflow-hidden border border-ink-border/80 shadow-md bg-white">
+        <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 mb-6">
+          <div className="relative w-14 h-14 sm:w-16 sm:h-16 flex-shrink-0 rounded-full overflow-hidden border border-ink-border/80 shadow-md bg-white mx-auto sm:mx-0">
             <Image
               src="/images/logo.png"
               alt="Banwari Lal Cloth House Official Seal"
@@ -42,15 +42,15 @@ export default function ContactPage() {
             </span>
           </div>
         </div>
-        <h1 className="font-serif text-3xl sm:text-5xl font-medium text-ink mt-2 mb-6">
+        <h1 className="font-serif text-3xl sm:text-5xl font-medium text-ink mt-2 mb-6 text-center sm:text-left">
           Visit or Contact Our Chilbila Store
         </h1>
       </ScrollReveal>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
         <ScrollReveal direction="up" delay={100}>
-          <div className="p-6 bg-canvas-pure border border-ink-border rounded-sm shadow-card-rest h-full">
-            <MapPin className="w-6 h-6 text-accent-gold mb-3" />
+          <div className="p-6 bg-canvas-pure border border-ink-border rounded-sm shadow-card-rest h-full flex flex-col items-center sm:items-start text-center sm:text-left">
+            <MapPin className="w-6 h-6 text-accent-gold mb-3 mx-auto sm:mx-0" />
             <h2 className="font-serif text-lg font-medium text-ink mb-1">Store Address</h2>
             <p className="font-sans text-sm text-ink-secondary mb-4">
               {siteConfig.businessName}<br />
@@ -62,7 +62,7 @@ export default function ContactPage() {
               href={directionsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-accent-gold hover:underline"
+              className="inline-flex items-center justify-center sm:justify-start gap-1.5 text-xs font-semibold text-accent-gold hover:underline"
             >
               <Navigation className="w-3.5 h-3.5" />
               <span>Get Directions on Google Maps</span>
@@ -71,17 +71,17 @@ export default function ContactPage() {
         </ScrollReveal>
 
         <ScrollReveal direction="up" delay={200}>
-          <div className="p-6 bg-canvas-pure border border-ink-border rounded-sm shadow-card-rest h-full">
-            <Clock className="w-6 h-6 text-accent-gold mb-3" />
+          <div className="p-6 bg-canvas-pure border border-ink-border rounded-sm shadow-card-rest h-full flex flex-col items-center sm:items-start text-center sm:text-left">
+            <Clock className="w-6 h-6 text-accent-gold mb-3 mx-auto sm:mx-0" />
             <h2 className="font-serif text-lg font-medium text-ink mb-1">Operating Hours & Contact</h2>
             <p className="font-sans text-sm text-ink-secondary mb-4">
               {siteConfig.contact.storeHours}
             </p>
-            <div className="space-y-2">
+            <div className="space-y-2 flex flex-col items-center sm:items-start w-full">
               {siteConfig.contact.primaryPhone && (
                 <a
                   href={`tel:${siteConfig.contact.primaryPhone}`}
-                  className="flex items-center gap-2 text-xs font-medium text-ink hover:text-accent-gold"
+                  className="inline-flex items-center gap-2 text-xs font-medium text-ink hover:text-accent-gold"
                 >
                   <Phone className="w-3.5 h-3.5 text-ink-secondary" />
                   <span>Call Store: {siteConfig.contact.primaryPhone}</span>
@@ -92,7 +92,7 @@ export default function ContactPage() {
                   href={generalWhatsAppUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-xs font-medium text-brand-whatsapp hover:underline"
+                  className="inline-flex items-center gap-2 text-xs font-medium text-brand-whatsapp hover:underline"
                 >
                   <MessageCircle className="w-3.5 h-3.5" />
                   <span>Chat on WhatsApp</span>
@@ -105,10 +105,10 @@ export default function ContactPage() {
         {/* Google Reviews Card */}
         <div className="md:col-span-2">
           <ScrollReveal direction="up" delay={300}>
-            <div className="p-6 bg-canvas-pure border border-ink-border rounded-sm shadow-card-rest">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                <div>
-                  <div className="flex items-center gap-1 mb-1">
+            <div className="p-6 bg-canvas-pure border border-ink-border rounded-sm shadow-card-rest text-center sm:text-left">
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="flex flex-col items-center sm:items-start">
+                  <div className="flex items-center justify-center sm:justify-start gap-1 mb-1">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                     ))}
@@ -124,7 +124,7 @@ export default function ContactPage() {
                     href={siteConfig.address.googleReviewsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-sm bg-ink text-white font-sans text-xs font-semibold hover:bg-ink-hover transition-colors shadow-sm self-start sm:self-auto flex-shrink-0"
+                    className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-sm bg-ink text-white font-sans text-xs font-semibold hover:bg-ink-hover transition-colors shadow-sm self-center sm:self-auto flex-shrink-0"
                     aria-label="Write a Google Review"
                   >
                     <span>Write a Google Review</span>

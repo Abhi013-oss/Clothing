@@ -18,7 +18,7 @@ export default function CollectionsPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
       {/* Accessible Semantic Breadcrumb */}
-      <nav aria-label="Breadcrumb" className="mb-6">
+      <nav aria-label="Breadcrumb" className="mb-6 flex justify-center sm:justify-start">
         <ol className="flex items-center space-x-2 text-xs text-ink-secondary">
           <li>
             <Link href="/" className="hover:text-ink transition-colors">
@@ -35,8 +35,8 @@ export default function CollectionsPage() {
       </nav>
 
       {/* Editorial Catalogue Header */}
-      <div className="mb-10 max-w-3xl">
-        <span className="font-sans text-xs uppercase tracking-widest text-accent-gold font-semibold">
+      <div className="mb-10 max-w-3xl text-center sm:text-left mx-auto sm:mx-0">
+        <span className="font-sans text-xs uppercase tracking-widest text-accent-gold font-semibold block">
           Chilbila Digital Catalogue
         </span>
         <h1 className="font-serif text-3xl sm:text-5xl font-medium text-ink mt-2 mb-3">

@@ -15,8 +15,8 @@ export default function VisualShowcase() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Editorial Text Statement */}
-          <ScrollReveal direction="left" delay={50} className="lg:col-span-6 flex flex-col items-start">
-            <span className="font-sans text-xs uppercase tracking-widest text-accent-gold font-semibold mb-3">
+          <ScrollReveal direction="left" delay={50} className="lg:col-span-6 flex flex-col items-center lg:items-start text-center lg:text-left">
+            <span className="font-sans text-xs uppercase tracking-widest text-accent-gold font-semibold mb-3 mx-auto lg:mx-0">
               Editorial Craftsmanship
             </span>
 
@@ -25,13 +25,13 @@ export default function VisualShowcase() {
               <span className="italic font-normal text-canvas-sand">Authentic Handloom.</span>
             </h2>
 
-            <p className="font-sans text-base text-canvas/80 leading-relaxed mb-8 max-w-lg">
+            <p className="font-sans text-base text-canvas/80 leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0">
               Every fold of silk, every thread of fine resham embroidery, and every weave tells a story of patience. Experience the rich tactile presence of handcrafted Indian textiles.
             </p>
 
             <Link
               href="/collections/sarees"
-              className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-sm bg-accent-gold text-ink font-sans text-sm font-semibold tracking-wider hover:bg-accent-goldHover transition-colors shadow-sm"
+              className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-sm bg-accent-gold text-ink font-sans text-sm font-semibold tracking-wider hover:bg-accent-goldHover transition-colors shadow-sm mx-auto lg:mx-0"
             >
               <span>EXPLORE SAREES & WEAVES</span>
               <ArrowRight className="w-4 h-4" />

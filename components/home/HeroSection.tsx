@@ -59,9 +59,9 @@ export default function HeroSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Editorial Column: Typography & Intent */}
-          <div className="lg:col-span-7 flex flex-col items-start z-10">
+          <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left z-10">
             {/* Heritage Credential Eyebrow with Official Store Crest */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-canvas-muted border border-ink-border/80 text-[11px] sm:text-xs font-semibold tracking-widest text-ink uppercase mb-5 shadow-sm animate-slide-down" style={{ animationDelay: '150ms', animationFillMode: 'backwards' }}>
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-canvas-muted border border-ink-border/80 text-[11px] sm:text-xs font-semibold tracking-widest text-ink uppercase mb-5 shadow-sm animate-slide-down mx-auto lg:mx-0" style={{ animationDelay: '150ms', animationFillMode: 'backwards' }}>
               <div className="relative w-5 h-5 rounded-full overflow-hidden border border-ink-border/60 bg-white flex-shrink-0">
                 <Image
                   src="/images/logo.png"
@@ -80,16 +80,16 @@ export default function HeroSection() {
             </h1>
 
             {/* Narrative Subtitle */}
-            <p className="font-sans text-base sm:text-lg text-ink-secondary leading-relaxed max-w-xl mb-8 animate-slide-up" style={{ animationDelay: '450ms', animationFillMode: 'backwards' }}>
+            <p className="font-sans text-base sm:text-lg text-ink-secondary leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8 animate-slide-up" style={{ animationDelay: '450ms', animationFillMode: 'backwards' }}>
               Explore our celebrated digital showcase of handloom sarees, unstitched suit fabrics, 
               contemporary readymade garments, and fine menswear textiles from Chilbila, Pratapgarh.
             </p>
 
             {/* Action CTA Group */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto animate-slide-up" style={{ animationDelay: '600ms', animationFillMode: 'backwards' }}>
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-4 w-full sm:w-auto animate-slide-up" style={{ animationDelay: '600ms', animationFillMode: 'backwards' }}>
               <Link
                 href="/collections"
-                className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-sm bg-ink text-white font-sans text-sm font-semibold tracking-wider hover:bg-ink-hover hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 shadow-sm"
+                className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-sm bg-ink text-white font-sans text-sm font-semibold tracking-wider hover:bg-ink-hover hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 shadow-sm text-center"
               >
                 <span>EXPLORE COLLECTION</span>
                 <ArrowRight className="w-4 h-4" />
@@ -100,7 +100,7 @@ export default function HeroSection() {
                   href={generalWhatsAppUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-sm bg-canvas-muted text-ink font-sans text-sm font-semibold border border-ink-border hover:bg-canvas-sand hover:border-accent-gold transition-all duration-200"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-sm bg-canvas-muted text-ink font-sans text-sm font-semibold border border-ink-border hover:bg-canvas-sand hover:border-accent-gold transition-all duration-200 text-center"
                 >
                   <MessageCircle className="w-4 h-4 text-brand-whatsapp" />
                   <span>Enquire on WhatsApp</span>
@@ -108,7 +108,7 @@ export default function HeroSection() {
               ) : (
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-sm bg-canvas-muted text-ink font-sans text-sm font-semibold border border-ink-border hover:bg-canvas-sand transition-all duration-200"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-sm bg-canvas-muted text-ink font-sans text-sm font-semibold border border-ink-border hover:bg-canvas-sand transition-all duration-200 text-center"
                 >
                   <span>Visit Chilbila Store</span>
                 </Link>
@@ -116,7 +116,7 @@ export default function HeroSection() {
             </div>
 
             {/* Storefront Landmark Confirmation */}
-            <div className="mt-8 sm:mt-10 pt-6 border-t border-ink-border/60 flex flex-wrap items-center gap-4 sm:gap-6 text-xs text-ink-secondary animate-fade-in" style={{ animationDelay: '750ms', animationFillMode: 'backwards' }}>
+            <div className="mt-8 sm:mt-10 pt-6 border-t border-ink-border/60 flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 text-xs text-ink-secondary animate-fade-in text-center lg:text-left" style={{ animationDelay: '750ms', animationFillMode: 'backwards' }}>
               <div>
                 <span className="font-semibold text-ink">Physical Store:</span> Near Hanuman Mandir, Chilbila
               </div>

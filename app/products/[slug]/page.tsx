@@ -133,7 +133,7 @@ export default function ProductDetailPage({ params }: Props) {
 
       {/* Accessible Hierarchical Breadcrumbs */}
       <nav aria-label="Breadcrumb" className="mb-8">
-        <ol className="flex flex-wrap items-center space-x-2 text-xs text-ink-secondary">
+        <ol className="flex flex-wrap items-center justify-center lg:justify-start space-x-2 text-xs text-ink-secondary">
           <li>
             <Link href="/" className="hover:text-ink transition-colors">
               Home
@@ -179,7 +179,7 @@ export default function ProductDetailPage({ params }: Props) {
         </div>
 
         {/* Right Column: Garment Information & CTAs (Col 5) */}
-        <div className="lg:col-span-5 flex flex-col justify-start">
+        <div className="lg:col-span-5 flex flex-col justify-start items-center lg:items-start text-center lg:text-left">
           {/* Department / Category Tag */}
           {product.categoryName && product.categorySlug && (
             <Link
@@ -196,7 +196,7 @@ export default function ProductDetailPage({ params }: Props) {
           </h1>
 
           {/* Price & Availability Bar */}
-          <div className="flex items-center gap-3 mb-6 pb-6 border-b border-ink-border/60">
+          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-6 pb-6 border-b border-ink-border/60 w-full">
             <span className="font-sans text-2xl sm:text-3xl font-semibold text-ink">
               {formatPrice(product.price)}
             </span>
@@ -206,7 +206,7 @@ export default function ProductDetailPage({ params }: Props) {
               </span>
             )}
             <span
-              className={`ml-auto px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full border ${
+              className={`px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full border ${
                 product.availability === 'in_stock'
                   ? 'bg-status-success/10 text-status-success border-status-success/20'
                   : 'bg-canvas-sand text-ink-secondary border-ink-border'
@@ -217,14 +217,14 @@ export default function ProductDetailPage({ params }: Props) {
           </div>
 
           {/* Description */}
-          <p className="font-sans text-sm sm:text-base text-ink-secondary leading-relaxed mb-6">
+          <p className="font-sans text-sm sm:text-base text-ink-secondary leading-relaxed mb-6 max-w-xl mx-auto lg:mx-0">
             {product.description}
           </p>
 
           {/* Garment Specifications Matrix (Only render present fields) */}
           {product.specifications && Object.keys(product.specifications).length > 0 && (
-            <div className="p-5 rounded-sm bg-canvas-muted/70 border border-ink-border mb-8">
-              <h2 className="font-serif text-sm font-medium text-ink uppercase tracking-wider mb-3">
+            <div className="p-5 rounded-sm bg-canvas-muted/70 border border-ink-border mb-8 w-full text-left">
+              <h2 className="font-serif text-sm font-medium text-ink uppercase tracking-wider mb-3 text-center lg:text-left">
                 Garment Attributes
               </h2>
               <dl className="grid grid-cols-2 gap-x-4 gap-y-3 text-xs">
@@ -265,21 +265,23 @@ export default function ProductDetailPage({ params }: Props) {
           )}
 
           {/* Primary Actions (Add to Bag, WhatsApp Order, Sticky Mobile Bar) */}
-          <ProductActions product={product} />
+          <div className="w-full">
+            <ProductActions product={product} />
+          </div>
         </div>
       </div>
 
       {/* Reassurance & Physical Showroom Callout */}
-      <div className="mt-16 p-6 sm:p-8 bg-canvas-sand/60 rounded-sm border border-ink-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-        <div className="flex items-start gap-4">
-          <div className="p-3 bg-canvas-pure rounded-full border border-ink-border text-accent-gold flex-shrink-0">
+      <div className="mt-16 p-6 sm:p-8 bg-canvas-sand/60 rounded-sm border border-ink-border flex flex-col sm:flex-row items-center sm:items-center justify-between gap-6 text-center sm:text-left">
+        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
+          <div className="p-3 bg-canvas-pure rounded-full border border-ink-border text-accent-gold flex-shrink-0 mx-auto sm:mx-0">
             <Store className="w-6 h-6" />
           </div>
           <div>
             <h3 className="font-serif text-base sm:text-lg font-medium text-ink">
               Prefer to touch and try before ordering?
             </h3>
-            <p className="font-sans text-xs sm:text-sm text-ink-secondary mt-1">
+            <p className="font-sans text-xs sm:text-sm text-ink-secondary mt-1 max-w-xl mx-auto sm:mx-0">
               Visit {siteConfig.businessName} Near Hanuman Mandir, Chilbila, Pratapgarh. Inspect handlooms, match borders, and get custom blouse tailoring advice.
             </p>
           </div>
@@ -287,7 +289,7 @@ export default function ProductDetailPage({ params }: Props) {
 
         <Link
           href="/contact"
-          className="inline-flex items-center gap-2 px-5 py-3 rounded-sm bg-canvas-pure text-ink border border-ink-border hover:border-accent-gold font-sans text-xs font-semibold whitespace-nowrap transition-colors"
+          className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-sm bg-canvas-pure text-ink border border-ink-border hover:border-accent-gold font-sans text-xs font-semibold whitespace-nowrap transition-colors mx-auto sm:mx-0"
         >
           <span>Store Directions</span>
           <ArrowRight className="w-3.5 h-3.5 text-accent-gold" />
@@ -297,9 +299,9 @@ export default function ProductDetailPage({ params }: Props) {
       {/* Related Products Discovery Rail */}
       {relatedProducts.length > 0 && (
         <section className="mt-20 pt-12 border-t border-ink-border/60">
-          <div className="flex items-center justify-between mb-8">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 text-center sm:text-left">
             <div>
-              <span className="font-sans text-xs uppercase tracking-widest text-accent-gold font-semibold">
+              <span className="font-sans text-xs uppercase tracking-widest text-accent-gold font-semibold block">
                 Explore More
               </span>
               <h2 className="font-serif text-2xl sm:text-3xl font-medium text-ink mt-1">

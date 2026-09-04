@@ -19,9 +19,9 @@ export default function Footer() {
         <ScrollReveal direction="up" delay={50}>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-ink-border/60">
           {/* Column 1: Brand & Heritage (Col 4) */}
-          <div className="lg:col-span-4 flex flex-col items-start">
-            <Link href="/" className="group flex items-center gap-3.5 mb-4">
-              <div className="relative w-12 h-12 flex-shrink-0 rounded-full overflow-hidden border border-ink-border/80 shadow-sm bg-white">
+          <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left">
+            <Link href="/" className="group flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 mb-4 text-center sm:text-left">
+              <div className="relative w-12 h-12 flex-shrink-0 rounded-full overflow-hidden border border-ink-border/80 shadow-sm bg-white mx-auto sm:mx-0">
                 <Image
                   src="/images/logo.png"
                   alt="Banwari Lal Cloth House Official Logo"
@@ -38,16 +38,16 @@ export default function Footer() {
                 </span>
               </div>
             </Link>
-            <p className="font-sans text-xs sm:text-sm text-ink-secondary leading-relaxed max-w-sm mb-6">
+            <p className="font-sans text-xs sm:text-sm text-ink-secondary leading-relaxed max-w-sm mb-6 mx-auto lg:mx-0">
               A trusted physical cloth house and apparel retailer serving Pratapgarh since 2003. We specialize in fine handloom sarees, unstitched suit lengths, festive readymade garments, and menswear essentials.
             </p>
-            <div className="text-xs text-ink-secondary">
+            <div className="text-xs text-ink-secondary text-center lg:text-left">
               <span className="font-semibold text-ink">In-Store Shopping:</span> Available daily near Hanuman Mandir.
             </div>
           </div>
 
           {/* Column 2: Collections Directory (Col 3) */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-3 text-center lg:text-left">
             <h3 className="font-serif text-sm font-medium text-ink uppercase tracking-wider mb-4">
               Collections
             </h3>
@@ -68,7 +68,7 @@ export default function Footer() {
           </div>
 
           {/* Column 3: Quick Navigation (Col 2) */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 text-center lg:text-left">
             <h3 className="font-serif text-sm font-medium text-ink uppercase tracking-wider mb-4">
               Explore
             </h3>
@@ -93,7 +93,7 @@ export default function Footer() {
                   href={siteConfig.address.googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-accent-gold transition-colors inline-flex items-center gap-1"
+                  className="hover:text-accent-gold transition-colors inline-flex items-center justify-center lg:justify-start gap-1"
                 >
                   <span>Google Maps</span>
                   <ArrowUpRight className="w-3 h-3" />
@@ -105,7 +105,7 @@ export default function Footer() {
                     href={siteConfig.address.googleReviewsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-accent-gold transition-colors inline-flex items-center gap-1 font-medium text-ink"
+                    className="hover:text-accent-gold transition-colors inline-flex items-center justify-center lg:justify-start gap-1 font-medium text-ink"
                   >
                     <span>Write a Google Review</span>
                     <ArrowUpRight className="w-3 h-3 text-accent-gold" />
@@ -116,11 +116,11 @@ export default function Footer() {
           </div>
 
           {/* Column 4: Store Location & Contact (Col 3) */}
-          <div className="lg:col-span-3 flex flex-col items-start">
+          <div className="lg:col-span-3 flex flex-col items-center lg:items-start text-center lg:text-left">
             <h3 className="font-serif text-sm font-medium text-ink uppercase tracking-wider mb-4">
               Chilbila Store
             </h3>
-            <div className="flex items-start gap-2 text-xs sm:text-sm text-ink-secondary mb-3">
+            <div className="flex flex-col sm:flex-row items-center lg:items-start gap-2 text-xs sm:text-sm text-ink-secondary mb-3">
               <MapPin className="w-4 h-4 text-accent-gold flex-shrink-0 mt-0.5" />
               <span>
                 {siteConfig.address.street}, {siteConfig.address.city}, {siteConfig.address.state} – {siteConfig.address.postalCode}
@@ -128,7 +128,7 @@ export default function Footer() {
             </div>
 
             {siteConfig.contact.primaryPhone && (
-              <div className="flex items-center gap-2 text-xs sm:text-sm text-ink-secondary mb-2">
+              <div className="flex items-center justify-center lg:justify-start gap-2 text-xs sm:text-sm text-ink-secondary mb-2">
                 <Phone className="w-4 h-4 text-accent-gold flex-shrink-0" />
                 <a href={`tel:${siteConfig.contact.primaryPhone}`} className="hover:text-ink transition-colors">
                   {siteConfig.contact.primaryPhone}
@@ -137,7 +137,7 @@ export default function Footer() {
             )}
 
             {generalWhatsAppUrl && (
-              <div className="flex items-center gap-2 text-xs sm:text-sm text-ink-secondary mb-4">
+              <div className="flex items-center justify-center lg:justify-start gap-2 text-xs sm:text-sm text-ink-secondary mb-4">
                 <MessageCircle className="w-4 h-4 text-brand-whatsapp flex-shrink-0" />
                 <a
                   href={generalWhatsAppUrl}
@@ -150,7 +150,7 @@ export default function Footer() {
               </div>
             )}
 
-            <p className="text-[11px] text-ink-muted italic">
+            <p className="text-[11px] text-ink-muted italic text-center lg:text-left">
               *All digital orders and reservations are fulfilled directly through personal merchant consultation on WhatsApp or in-store.
             </p>
           </div>
@@ -158,7 +158,7 @@ export default function Footer() {
       </ScrollReveal>
 
       {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-ink-secondary gap-4">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-center sm:justify-between text-center sm:text-left text-xs text-ink-secondary gap-4">
           <p>
             © {new Date().getFullYear()} {siteConfig.businessName}. All rights reserved.
           </p>

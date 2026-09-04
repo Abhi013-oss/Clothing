@@ -88,7 +88,7 @@ export default function CategoryPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: safeJsonLd(breadcrumbJsonLd) }}
       />
       {/* Accessible Semantic Breadcrumbs */}
-      <nav aria-label="Breadcrumb" className="mb-6">
+      <nav aria-label="Breadcrumb" className="mb-6 flex justify-center sm:justify-start">
         <ol className="flex items-center space-x-2 text-xs text-ink-secondary">
           <li>
             <Link href="/" className="hover:text-ink transition-colors">
@@ -115,22 +115,22 @@ export default function CategoryPage({ params }: Props) {
       {/* Editorial Category Header */}
       <div className="mb-10 pb-8 border-b border-ink-border/60">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-          <div className="md:col-span-8">
-            <span className="font-sans text-xs uppercase tracking-widest text-accent-gold font-semibold">
+          <div className="md:col-span-8 text-center md:text-left">
+            <span className="font-sans text-xs uppercase tracking-widest text-accent-gold font-semibold block">
               Curated Department
             </span>
             <h1 className="font-serif text-3xl sm:text-5xl font-medium text-ink mt-2 mb-3">
               {category.name}
             </h1>
             {category.description && (
-              <p className="font-sans text-sm sm:text-base text-ink-secondary leading-relaxed max-w-2xl">
+              <p className="font-sans text-sm sm:text-base text-ink-secondary leading-relaxed max-w-2xl mx-auto md:mx-0">
                 {category.description}
               </p>
             )}
           </div>
 
           {/* Quick Category Stats */}
-          <div className="md:col-span-4 flex md:justify-end">
+          <div className="md:col-span-4 flex justify-center md:justify-end">
             <div className="p-4 bg-canvas-sand rounded-sm border border-ink-border/80 text-center min-w-[140px]">
               <span className="font-serif text-2xl font-medium text-ink">
                 {categoryProducts.length}

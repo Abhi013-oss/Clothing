@@ -73,22 +73,22 @@ export default function CategoryGrid() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <ScrollReveal direction="up" delay={50}>
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10 sm:mb-12">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas-muted border border-ink-border text-xs font-semibold uppercase tracking-widest text-ink mb-3 shadow-sm">
+          <div className="flex flex-col sm:flex-row items-center sm:items-end justify-between text-center sm:text-left gap-6 mb-10 sm:mb-12">
+            <div className="flex flex-col items-center sm:items-start">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas-muted border border-ink-border text-xs font-semibold uppercase tracking-widest text-ink mb-3 shadow-sm mx-auto sm:mx-0">
                 <Sparkles className="w-3 h-3 text-accent-gold" />
                 <span>Curated Departments ({curatedDepartments.length})</span>
               </div>
               <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-medium text-ink leading-tight">
                 Explore by Clothing Category
               </h2>
-              <p className="font-sans text-xs sm:text-sm text-ink-secondary mt-2 max-w-xl">
+              <p className="font-sans text-xs sm:text-sm text-ink-secondary mt-2 max-w-xl mx-auto sm:mx-0">
                 Scroll sideways to browse all our festive handloom sarees, unstitched suitings, bridal lehengas, kurtis, and menswear fabrics.
               </p>
             </div>
 
             {/* Navigation Controls: Arrows & Full Collection Link */}
-            <div className="flex items-center gap-3 self-start sm:self-end">
+            <div className="flex items-center justify-center sm:justify-end gap-3 self-center sm:self-end">
               <Link
                 href="/collections"
                 className="inline-flex items-center gap-1.5 font-sans text-xs sm:text-sm font-semibold text-ink hover:text-accent-gold transition-colors mr-2 group"
@@ -189,14 +189,14 @@ export default function CategoryGrid() {
         </ScrollReveal>
 
         {/* Scroll Progress Bar & Mobile Swipe Hint */}
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-ink-border/40">
-          <div className="flex items-center gap-2 text-xs text-ink-secondary">
+        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center sm:justify-between text-center sm:text-left gap-4 pt-4 border-t border-ink-border/40">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 text-xs text-ink-secondary">
             <span className="font-semibold text-ink">Browse All 10 Departments:</span>
             <span>Use horizontal swipe or top arrow buttons to explore</span>
           </div>
 
           {/* Minimalist Progress Track */}
-          <div className="w-full sm:w-64 h-1.5 bg-canvas-sand rounded-full overflow-hidden border border-ink-border/60">
+          <div className="w-full sm:w-64 h-1.5 bg-canvas-sand rounded-full overflow-hidden border border-ink-border/60 mx-auto sm:mx-0">
             <div
               className="h-full bg-accent-gold rounded-full transition-all duration-200"
               style={{ width: `${Math.max(10, scrollProgress)}%` }}

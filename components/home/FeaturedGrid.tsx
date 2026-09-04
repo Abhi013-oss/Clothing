@@ -19,14 +19,14 @@ export default function FeaturedGrid() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <ScrollReveal direction="up" delay={50}>
-          <div className="max-w-2xl mb-12">
-            <span className="font-sans text-xs uppercase tracking-widest text-accent-gold font-semibold">
+          <div className="max-w-2xl mb-12 text-center sm:text-left mx-auto sm:mx-0">
+            <span className="font-sans text-xs uppercase tracking-widest text-accent-gold font-semibold block">
               Handpicked Selections
             </span>
             <h2 className="font-serif text-2xl sm:text-4xl font-medium text-ink mt-2">
               Featured Garments & Handlooms
             </h2>
-            <p className="font-sans text-sm sm:text-base text-ink-secondary mt-3">
+            <p className="font-sans text-sm sm:text-base text-ink-secondary mt-3 max-w-xl mx-auto sm:mx-0">
               A curated glimpse of festive sarees, unstitched suitings, and ready-to-wear pieces currently in high demand at our Chilbila store.
             </p>
           </div>

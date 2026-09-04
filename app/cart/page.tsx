@@ -41,7 +41,7 @@ export default function CartPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
       {/* Accessible Semantic Breadcrumb */}
-      <nav aria-label="Breadcrumb" className="mb-6">
+      <nav aria-label="Breadcrumb" className="mb-6 flex justify-center sm:justify-start">
         <ol className="flex items-center space-x-2 text-xs text-ink-secondary">
           <li>
             <Link href="/" className="hover:text-ink transition-colors">
@@ -67,8 +67,8 @@ export default function CartPage() {
 
       {/* Stale/Purged Products Alert Banner */}
       {removedItemsNotice.length > 0 && (
-        <div className="mb-8 p-4 bg-canvas-muted rounded-sm border border-ink-border flex items-start justify-between gap-3 text-xs text-ink">
-          <div className="flex items-start gap-2.5">
+        <div className="mb-8 p-4 bg-canvas-muted rounded-sm border border-ink-border flex flex-col sm:flex-row items-center sm:items-start justify-between gap-3 text-xs text-ink text-center sm:text-left">
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-2.5">
             <AlertCircle className="w-4 h-4 text-accent-gold flex-shrink-0 mt-0.5" />
             <div>
               <p className="font-semibold">Inventory Notice:</p>
@@ -88,9 +88,9 @@ export default function CartPage() {
       )}
 
       {/* Editorial Page Header */}
-      <div className="mb-10 pb-6 border-b border-ink-border/60 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-        <div className="flex items-start gap-4">
-          <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden border border-ink-border shadow-sm bg-white flex-shrink-0 mt-1">
+      <div className="mb-10 pb-6 border-b border-ink-border/60 flex flex-col sm:flex-row sm:items-end justify-between items-center text-center sm:text-left gap-4">
+        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
+          <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden border border-ink-border shadow-sm bg-white flex-shrink-0 mt-1 mx-auto sm:mx-0">
             <Image
               src="/images/logo.png"
               alt="Banwari Lal Cloth House Official Seal"
@@ -99,20 +99,20 @@ export default function CartPage() {
             />
           </div>
           <div>
-            <span className="font-sans text-xs uppercase tracking-widest text-accent-gold font-semibold">
+            <span className="font-sans text-xs uppercase tracking-widest text-accent-gold font-semibold block">
               Order Review • Banwari Lal Cloth House
             </span>
             <h1 className="font-serif text-3xl sm:text-5xl font-medium text-ink mt-1">
               Your Curated Selection
             </h1>
-            <p className="font-sans text-sm sm:text-base text-ink-secondary mt-2 max-w-xl">
+            <p className="font-sans text-sm sm:text-base text-ink-secondary mt-2 max-w-xl mx-auto sm:mx-0">
               Review your pieces before connecting with our store team. All orders and custom sizing are personally confirmed on WhatsApp.
             </p>
           </div>
         </div>
 
         {items.length > 0 && (
-          <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-canvas-muted border border-ink-border text-ink self-start sm:self-auto">
+          <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-canvas-muted border border-ink-border text-ink self-center sm:self-auto">
             {totalItemCount} {totalItemCount === 1 ? 'Garment' : 'Garments'} Selected
           </span>
         )}

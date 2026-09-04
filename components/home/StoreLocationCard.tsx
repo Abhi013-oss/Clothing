@@ -19,8 +19,8 @@ export default function StoreLocationCard() {
           <div className="bg-canvas-pure rounded-sm border border-ink-border p-8 sm:p-12 shadow-card-hover">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Column: Address & Direct Triggers */}
-            <div className="lg:col-span-7 flex flex-col items-start">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas-muted text-xs font-semibold uppercase tracking-wider text-ink mb-4 border border-ink-border">
+            <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas-muted text-xs font-semibold uppercase tracking-wider text-ink mb-4 border border-ink-border mx-auto lg:mx-0">
                 <MapPin className="w-3.5 h-3.5 text-accent-gold" />
                 <span>Visit Our Physical Store</span>
               </div>
@@ -29,13 +29,13 @@ export default function StoreLocationCard() {
                 Experience the Fabrics in Person
               </h2>
 
-              <p className="font-sans text-sm sm:text-base text-ink-secondary leading-relaxed mb-6 max-w-xl">
+              <p className="font-sans text-sm sm:text-base text-ink-secondary leading-relaxed mb-6 max-w-xl mx-auto lg:mx-0">
                 We warmly invite you to visit our Chilbila store to feel the texture, drape the silks, and receive personalized tailoring and styling advice.
               </p>
 
               {/* Exact Address Block with Official Logo Badge */}
-              <div className="p-4 sm:p-5 rounded-sm bg-canvas-sand/60 border border-ink-border/80 w-full mb-6 flex items-start gap-4">
-                <div className="relative w-14 h-14 flex-shrink-0 rounded-full overflow-hidden border border-ink-border shadow-sm bg-white mt-0.5">
+              <div className="p-4 sm:p-5 rounded-sm bg-canvas-sand/60 border border-ink-border/80 w-full mb-6 flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4">
+                <div className="relative w-14 h-14 flex-shrink-0 rounded-full overflow-hidden border border-ink-border shadow-sm bg-white mt-0.5 mx-auto sm:mx-0">
                   <Image
                     src="/images/logo.png"
                     alt="Banwari Lal Cloth House Official Seal"
@@ -50,7 +50,7 @@ export default function StoreLocationCard() {
                   <p className="font-sans text-xs sm:text-sm text-ink-secondary mt-1">
                     {siteConfig.address.street}, {siteConfig.address.city}, {siteConfig.address.state} – {siteConfig.address.postalCode}, {siteConfig.address.country}
                   </p>
-                  <div className="flex items-center gap-2 mt-3 pt-3 border-t border-ink-border/60 text-xs text-ink-secondary">
+                  <div className="flex items-center justify-center sm:justify-start gap-2 mt-3 pt-3 border-t border-ink-border/60 text-xs text-ink-secondary">
                     <Clock className="w-3.5 h-3.5 text-accent-gold" />
                     <span>{siteConfig.contact.storeHours}</span>
                   </div>
@@ -58,7 +58,7 @@ export default function StoreLocationCard() {
               </div>
 
               {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-4">
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
                 <a
                   href={directionsUrl}
                   target="_blank"
@@ -107,7 +107,7 @@ export default function StoreLocationCard() {
             </div>
 
             {/* Right Column: Visual Landmark Framing */}
-            <div className="lg:col-span-5 bg-canvas-sand rounded-sm p-6 border border-ink-border/60 flex flex-col justify-between h-full">
+            <div className="lg:col-span-5 bg-canvas-sand rounded-sm p-6 border border-ink-border/60 flex flex-col justify-between h-full text-center lg:text-left items-center lg:items-start">
               <div>
                 <span className="font-sans text-xs font-semibold uppercase tracking-widest text-ink-secondary">
                   Key Landmark
@@ -120,7 +120,7 @@ export default function StoreLocationCard() {
                 </p>
               </div>
 
-              <div className="mt-8 pt-6 border-t border-ink-border">
+              <div className="mt-8 pt-6 border-t border-ink-border w-full flex justify-center lg:justify-start">
                 <a
                   href={siteConfig.address.googleMapsUrl}
                   target="_blank"

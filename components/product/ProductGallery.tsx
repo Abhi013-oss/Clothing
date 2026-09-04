@@ -95,7 +95,7 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
 
       {/* Thumbnail Rail (Only rendered when more than 1 image exists) */}
       {safeImages.length > 1 && (
-        <div className="flex items-center gap-3 overflow-x-auto pb-1 scrollbar-none">
+        <div className="flex items-center justify-center sm:justify-start gap-3 overflow-x-auto pb-1 scrollbar-none">
           {safeImages.map((img, idx) => (
             <button
               key={img.id || idx}

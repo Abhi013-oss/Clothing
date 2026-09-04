@@ -80,26 +80,26 @@ export default function ProductCard({ product, variant = 'grid' }: ProductCardPr
       </Link>
 
       {/* Card Content */}
-      <div className="p-4 flex flex-col flex-1 justify-between bg-canvas-pure">
-        <div>
+      <div className="p-3.5 sm:p-4 flex flex-col flex-1 justify-between bg-canvas-pure text-center sm:text-left">
+        <div className="flex flex-col items-center sm:items-start">
           <Link
             href={`/products/${product.slug}`}
-            className="block font-serif text-sm sm:text-base font-medium text-ink hover:text-accent-gold transition-colors line-clamp-1 focus:outline-none focus-visible:ring-1 focus-visible:ring-accent-gold rounded-sm"
+            className="block font-serif text-sm sm:text-base font-medium text-ink hover:text-accent-gold transition-colors line-clamp-1 focus:outline-none focus-visible:ring-1 focus-visible:ring-accent-gold rounded-sm w-full"
           >
             {product.name}
           </Link>
 
           {/* Subtitle / Fabric info if present */}
           {product.specifications?.fabric && (
-            <p className="font-sans text-xs text-ink-secondary mt-1 line-clamp-1">
+            <p className="font-sans text-xs text-ink-secondary mt-1 line-clamp-1 w-full">
               {product.specifications.fabric}
             </p>
           )}
         </div>
 
         {/* Price & Action Row */}
-        <div className="mt-3.5 pt-3 border-t border-ink-border/50 flex items-center justify-between">
-          <div className="flex flex-col">
+        <div className="mt-3.5 pt-3 border-t border-ink-border/50 flex flex-col sm:flex-row items-center justify-between gap-2.5">
+          <div className="flex sm:flex-col items-center sm:items-start gap-1.5 sm:gap-0">
             <span className="font-sans text-xs sm:text-sm font-semibold text-ink">
               {formatPrice(product.price)}
             </span>
@@ -110,13 +110,13 @@ export default function ProductCard({ product, variant = 'grid' }: ProductCardPr
             )}
           </div>
 
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center justify-center gap-1.5 w-full sm:w-auto">
             <a
               href={whatsappUrl || `https://wa.me/917080605007?text=${encodeURIComponent(product.name)}`}
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="p-1.5 rounded-full bg-canvas-muted text-brand-whatsapp hover:bg-brand-whatsapp hover:text-white border border-ink-border/80 transition-all duration-200 flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-whatsapp"
+              className="p-1.5 rounded-full bg-canvas-muted text-brand-whatsapp hover:bg-brand-whatsapp hover:text-white border border-ink-border/80 transition-all duration-200 flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-whatsapp flex-shrink-0"
               title={`Order ${product.name} on WhatsApp`}
               aria-label={`Order ${product.name} on WhatsApp`}
             >
@@ -125,7 +125,7 @@ export default function ProductCard({ product, variant = 'grid' }: ProductCardPr
 
             <button
               onClick={handleAddToCart}
-              className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold ${
+              className={`inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold flex-1 sm:flex-initial ${
                 isAdded
                   ? 'bg-status-success text-white'
                   : 'bg-canvas-muted text-ink hover:bg-ink hover:text-white border border-ink-border/80'
