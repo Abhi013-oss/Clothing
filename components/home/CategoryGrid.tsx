@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
 import { curatedDepartments } from '@/data/categories';
+import ScrollReveal from '@/components/common/ScrollReveal';
 
 export default function CategoryGrid() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -71,72 +72,75 @@ export default function CategoryGrid() {
     <section className="py-16 sm:py-24 border-b border-ink-border/50 bg-canvas overflow-hidden select-none">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10 sm:mb-12">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas-muted border border-ink-border text-xs font-semibold uppercase tracking-widest text-ink mb-3 shadow-sm">
-              <Sparkles className="w-3 h-3 text-accent-gold" />
-              <span>Curated Departments ({curatedDepartments.length})</span>
+        <ScrollReveal direction="up" delay={50}>
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10 sm:mb-12">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas-muted border border-ink-border text-xs font-semibold uppercase tracking-widest text-ink mb-3 shadow-sm">
+                <Sparkles className="w-3 h-3 text-accent-gold" />
+                <span>Curated Departments ({curatedDepartments.length})</span>
+              </div>
+              <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-medium text-ink leading-tight">
+                Explore by Clothing Category
+              </h2>
+              <p className="font-sans text-xs sm:text-sm text-ink-secondary mt-2 max-w-xl">
+                Scroll sideways to browse all our festive handloom sarees, unstitched suitings, bridal lehengas, kurtis, and menswear fabrics.
+              </p>
             </div>
-            <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-medium text-ink leading-tight">
-              Explore by Clothing Category
-            </h2>
-            <p className="font-sans text-xs sm:text-sm text-ink-secondary mt-2 max-w-xl">
-              Scroll sideways to browse all our festive handloom sarees, unstitched suitings, bridal lehengas, kurtis, and menswear fabrics.
-            </p>
+
+            {/* Navigation Controls: Arrows & Full Collection Link */}
+            <div className="flex items-center gap-3 self-start sm:self-end">
+              <Link
+                href="/collections"
+                className="inline-flex items-center gap-1.5 font-sans text-xs sm:text-sm font-semibold text-ink hover:text-accent-gold transition-colors mr-2 group"
+              >
+                <span>View All</span>
+                <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </Link>
+
+              {/* Manual Left Scroll Button */}
+              <button
+                onClick={() => scroll('left')}
+                disabled={!canScrollLeft}
+                className={`w-11 h-11 rounded-full border border-ink-border bg-canvas-pure flex items-center justify-center transition-all duration-200 ${
+                  canScrollLeft
+                    ? 'text-ink hover:bg-ink hover:text-white shadow-sm hover:scale-105 active:scale-95'
+                    : 'text-ink-muted/40 opacity-40 cursor-not-allowed'
+                } focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold`}
+                aria-label="Scroll left to previous clothing departments"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+
+              {/* Manual Right Scroll Button */}
+              <button
+                onClick={() => scroll('right')}
+                disabled={!canScrollRight}
+                className={`w-11 h-11 rounded-full border border-ink-border bg-canvas-pure flex items-center justify-center transition-all duration-200 ${
+                  canScrollRight
+                    ? 'text-ink hover:bg-ink hover:text-white shadow-sm hover:scale-105 active:scale-95'
+                    : 'text-ink-muted/40 opacity-40 cursor-not-allowed'
+                } focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold`}
+                aria-label="Scroll right to more clothing departments"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
           </div>
-
-          {/* Navigation Controls: Arrows & Full Collection Link */}
-          <div className="flex items-center gap-3 self-start sm:self-end">
-            <Link
-              href="/collections"
-              className="inline-flex items-center gap-1.5 font-sans text-xs sm:text-sm font-semibold text-ink hover:text-accent-gold transition-colors mr-2 group"
-            >
-              <span>View All</span>
-              <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </Link>
-
-            {/* Manual Left Scroll Button */}
-            <button
-              onClick={() => scroll('left')}
-              disabled={!canScrollLeft}
-              className={`w-11 h-11 rounded-full border border-ink-border bg-canvas-pure flex items-center justify-center transition-all duration-200 ${
-                canScrollLeft
-                  ? 'text-ink hover:bg-ink hover:text-white shadow-sm hover:scale-105 active:scale-95'
-                  : 'text-ink-muted/40 opacity-40 cursor-not-allowed'
-              } focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold`}
-              aria-label="Scroll left to previous clothing departments"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-
-            {/* Manual Right Scroll Button */}
-            <button
-              onClick={() => scroll('right')}
-              disabled={!canScrollRight}
-              className={`w-11 h-11 rounded-full border border-ink-border bg-canvas-pure flex items-center justify-center transition-all duration-200 ${
-                canScrollRight
-                  ? 'text-ink hover:bg-ink hover:text-white shadow-sm hover:scale-105 active:scale-95'
-                  : 'text-ink-muted/40 opacity-40 cursor-not-allowed'
-              } focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold`}
-              aria-label="Scroll right to more clothing departments"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
-          </div>
-        </div>
+        </ScrollReveal>
 
         {/* Sideways Scrollable Rail */}
-        <div
-          ref={scrollRef}
-          onScroll={checkScrollability}
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUpOrLeave}
-          onMouseLeave={handleMouseUpOrLeave}
-          className={`flex gap-5 sm:gap-6 overflow-x-auto pb-4 scroll-smooth snap-x snap-mandatory scrollbar-none cursor-grab active:cursor-grabbing -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8`}
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-        >
-          {curatedDepartments.map((dept) => (
+        <ScrollReveal direction="up" delay={150}>
+          <div
+            ref={scrollRef}
+            onScroll={checkScrollability}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUpOrLeave}
+            onMouseLeave={handleMouseUpOrLeave}
+            className={`flex gap-5 sm:gap-6 overflow-x-auto pb-4 scroll-smooth snap-x snap-mandatory scrollbar-none cursor-grab active:cursor-grabbing -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8`}
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {curatedDepartments.map((dept) => (
             <Link
               key={dept.id}
               href={`/collections/${dept.slug}`}
@@ -181,7 +185,8 @@ export default function CategoryGrid() {
               </div>
             </Link>
           ))}
-        </div>
+          </div>
+        </ScrollReveal>
 
         {/* Scroll Progress Bar & Mobile Swipe Hint */}
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-ink-border/40">

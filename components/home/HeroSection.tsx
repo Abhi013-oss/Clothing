@@ -61,7 +61,7 @@ export default function HeroSection() {
           {/* Left Editorial Column: Typography & Intent */}
           <div className="lg:col-span-7 flex flex-col items-start z-10">
             {/* Heritage Credential Eyebrow with Official Store Crest */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-canvas-muted border border-ink-border/80 text-[11px] sm:text-xs font-semibold tracking-widest text-ink uppercase mb-5 shadow-sm">
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-canvas-muted border border-ink-border/80 text-[11px] sm:text-xs font-semibold tracking-widest text-ink uppercase mb-5 shadow-sm animate-slide-down" style={{ animationDelay: '150ms', animationFillMode: 'backwards' }}>
               <div className="relative w-5 h-5 rounded-full overflow-hidden border border-ink-border/60 bg-white flex-shrink-0">
                 <Image
                   src="/images/logo.png"
@@ -74,19 +74,19 @@ export default function HeroSection() {
             </div>
 
             {/* Main Display Headline */}
-            <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-medium text-ink leading-[1.12] tracking-[-0.015em] mb-6">
+            <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-medium text-ink leading-[1.12] tracking-[-0.015em] mb-6 animate-slide-up" style={{ animationDelay: '300ms', animationFillMode: 'backwards' }}>
               Timeless Weaves, <br />
               <span className="italic font-normal text-ink-secondary">Curated for Generations.</span>
             </h1>
 
             {/* Narrative Subtitle */}
-            <p className="font-sans text-base sm:text-lg text-ink-secondary leading-relaxed max-w-xl mb-8">
+            <p className="font-sans text-base sm:text-lg text-ink-secondary leading-relaxed max-w-xl mb-8 animate-slide-up" style={{ animationDelay: '450ms', animationFillMode: 'backwards' }}>
               Explore our celebrated digital showcase of handloom sarees, unstitched suit fabrics, 
               contemporary readymade garments, and fine menswear textiles from Chilbila, Pratapgarh.
             </p>
 
             {/* Action CTA Group */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto animate-slide-up" style={{ animationDelay: '600ms', animationFillMode: 'backwards' }}>
               <Link
                 href="/collections"
                 className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-sm bg-ink text-white font-sans text-sm font-semibold tracking-wider hover:bg-ink-hover hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 shadow-sm"
@@ -116,7 +116,7 @@ export default function HeroSection() {
             </div>
 
             {/* Storefront Landmark Confirmation */}
-            <div className="mt-8 sm:mt-10 pt-6 border-t border-ink-border/60 flex flex-wrap items-center gap-4 sm:gap-6 text-xs text-ink-secondary">
+            <div className="mt-8 sm:mt-10 pt-6 border-t border-ink-border/60 flex flex-wrap items-center gap-4 sm:gap-6 text-xs text-ink-secondary animate-fade-in" style={{ animationDelay: '750ms', animationFillMode: 'backwards' }}>
               <div>
                 <span className="font-semibold text-ink">Physical Store:</span> Near Hanuman Mandir, Chilbila
               </div>
@@ -127,7 +127,7 @@ export default function HeroSection() {
           </div>
 
           {/* Right Visual Column: Signature 3D Spatial Frame */}
-          <div className="lg:col-span-5 relative mt-4 lg:mt-0">
+          <div className="lg:col-span-5 relative mt-4 lg:mt-0 animate-scale-up" style={{ animationDelay: '350ms', animationFillMode: 'backwards' }}>
             {/* Ambient Shadow Layer */}
             <div className="absolute -inset-2 rounded-sm bg-canvas-sand -z-10 transform rotate-1 hidden sm:block border border-ink-border/40" />
 

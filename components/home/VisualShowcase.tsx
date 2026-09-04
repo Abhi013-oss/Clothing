@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import ScrollReveal from '@/components/common/ScrollReveal';
 
 export default function VisualShowcase() {
   return (
@@ -14,7 +15,7 @@ export default function VisualShowcase() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Editorial Text Statement */}
-          <div className="lg:col-span-6 flex flex-col items-start">
+          <ScrollReveal direction="left" delay={50} className="lg:col-span-6 flex flex-col items-start">
             <span className="font-sans text-xs uppercase tracking-widest text-accent-gold font-semibold mb-3">
               Editorial Craftsmanship
             </span>
@@ -35,28 +36,33 @@ export default function VisualShowcase() {
               <span>EXPLORE SAREES & WEAVES</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
-          </div>
+          </ScrollReveal>
 
           {/* Photographic Lookbook Composition */}
           <div className="lg:col-span-6 grid grid-cols-2 gap-4 sm:gap-6">
-            <div className="relative aspect-[3/4] rounded-sm overflow-hidden border border-white/20 bg-ink-hover">
-              <Image
-                src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80"
-                alt="Detailed handloom silk weave craftsmanship"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 50vw, 25vw"
-              />
-            </div>
-            <div className="relative aspect-[3/4] rounded-sm overflow-hidden border border-white/20 bg-ink-hover mt-6 sm:mt-10">
-              <Image
-                src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=800&q=80"
-                alt="Fine suiting fabric drape and texture"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 50vw, 25vw"
-              />
-            </div>
+            <ScrollReveal direction="up" delay={100}>
+              <div className="relative aspect-[3/4] rounded-sm overflow-hidden border border-white/20 bg-ink-hover">
+                <Image
+                  src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80"
+                  alt="Detailed handloom silk weave craftsmanship"
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-700 ease-editorial"
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                />
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal direction="up" delay={220}>
+              <div className="relative aspect-[3/4] rounded-sm overflow-hidden border border-white/20 bg-ink-hover mt-6 sm:mt-10">
+                <Image
+                  src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=800&q=80"
+                  alt="Fine suiting fabric drape and texture"
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-700 ease-editorial"
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                />
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </div>

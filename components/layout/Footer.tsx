@@ -5,6 +5,7 @@ import { MapPin, Phone, MessageCircle, ArrowUpRight } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 import { categories } from '@/data/categories';
 import { buildWhatsAppUrl, generateGeneralEnquiryMessage } from '@/lib/whatsapp/generator';
+import ScrollReveal from '@/components/common/ScrollReveal';
 
 export default function Footer() {
   const generalWhatsAppUrl = buildWhatsAppUrl(
@@ -13,9 +14,10 @@ export default function Footer() {
   );
 
   return (
-    <footer className="bg-canvas border-t border-ink-border text-ink pt-16 pb-12">
+    <footer className="bg-canvas border-t border-ink-border text-ink pt-16 pb-12 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-ink-border/60">
+        <ScrollReveal direction="up" delay={50}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-ink-border/60">
           {/* Column 1: Brand & Heritage (Col 4) */}
           <div className="lg:col-span-4 flex flex-col items-start">
             <Link href="/" className="group flex items-center gap-3.5 mb-4">
@@ -153,8 +155,9 @@ export default function Footer() {
             </p>
           </div>
         </div>
+      </ScrollReveal>
 
-        {/* Bottom Bar */}
+      {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-ink-secondary gap-4">
           <p>
             © {new Date().getFullYear()} {siteConfig.businessName}. All rights reserved.

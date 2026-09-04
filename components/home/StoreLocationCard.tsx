@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { MapPin, Phone, MessageCircle, Navigation, Clock, Star } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 import { buildWhatsAppUrl, generateGeneralEnquiryMessage } from '@/lib/whatsapp/generator';
+import ScrollReveal from '@/components/common/ScrollReveal';
 
 export default function StoreLocationCard() {
   const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${siteConfig.address.latitude},${siteConfig.address.longitude}`;
@@ -14,7 +15,8 @@ export default function StoreLocationCard() {
   return (
     <section className="py-20 sm:py-28 bg-canvas border-b border-ink-border/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-canvas-pure rounded-sm border border-ink-border p-8 sm:p-12 shadow-card-hover">
+        <ScrollReveal direction="up" delay={60}>
+          <div className="bg-canvas-pure rounded-sm border border-ink-border p-8 sm:p-12 shadow-card-hover">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Column: Address & Direct Triggers */}
             <div className="lg:col-span-7 flex flex-col items-start">
@@ -132,7 +134,8 @@ export default function StoreLocationCard() {
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  );
+      </ScrollReveal>
+    </div>
+  </section>
+);
 }

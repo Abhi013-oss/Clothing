@@ -3,14 +3,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, ShieldCheck, Sparkles, Store } from 'lucide-react';
 import { siteConfig } from '@/config/site';
+import ScrollReveal from '@/components/common/ScrollReveal';
 
 export default function BrandStory() {
   return (
-    <section className="py-20 sm:py-28 bg-canvas-sand/40 border-b border-ink-border/60">
+    <section className="py-20 sm:py-28 bg-canvas-sand/40 border-b border-ink-border/60 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Visual Side: Two-Image Editorial Collage */}
-          <div className="lg:col-span-5 relative order-2 lg:order-1">
+          <ScrollReveal direction="right" delay={100} className="lg:col-span-5 relative order-2 lg:order-1">
             <div className="relative aspect-[3/4] w-full max-w-sm mx-auto rounded-sm overflow-hidden border border-ink-border shadow-card-hover bg-canvas">
               <Image
                 src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=900&q=85"
@@ -22,7 +23,7 @@ export default function BrandStory() {
             </div>
 
             {/* Overlapping Floating Badge with Official Store Logo */}
-            <div className="absolute bottom-3 right-3 sm:-bottom-6 sm:-right-6 bg-canvas-pure p-3.5 sm:p-5 rounded-sm border border-ink-border shadow-card-hover max-w-[220px] sm:max-w-[250px] flex items-center gap-3 sm:gap-3.5">
+            <div className="absolute bottom-3 right-3 sm:-bottom-6 sm:-right-6 bg-canvas-pure p-3.5 sm:p-5 rounded-sm border border-ink-border shadow-card-hover max-w-[220px] sm:max-w-[250px] flex items-center gap-3 sm:gap-3.5 animate-scale-up">
               <div className="relative w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 rounded-full overflow-hidden border border-ink-border/80 shadow-sm bg-white">
                 <Image
                   src="/images/logo.png"
@@ -40,10 +41,10 @@ export default function BrandStory() {
                 </p>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Narrative Column */}
-          <div className="lg:col-span-7 flex flex-col items-start order-1 lg:order-2">
+          <ScrollReveal direction="left" delay={50} className="lg:col-span-7 flex flex-col items-start order-1 lg:order-2">
             <span className="font-sans text-xs uppercase tracking-widest text-accent-gold font-semibold mb-2">
               Our Heritage & Values
             </span>
@@ -96,7 +97,7 @@ export default function BrandStory() {
               <span>Read Full Store History</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

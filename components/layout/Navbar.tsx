@@ -30,7 +30,7 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`sticky top-0 z-20 transition-all duration-300 ${
+        className={`sticky top-0 z-20 transition-all duration-300 animate-slide-down ${
           isScrolled
             ? 'bg-canvas/95 backdrop-blur-md shadow-card-rest border-b border-ink-border/80 py-3.5'
             : 'bg-canvas/80 backdrop-blur-sm border-b border-ink-border/40 py-5'

@@ -5,6 +5,8 @@ import { CartProvider } from '@/context/CartContext';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import CartDrawer from '@/components/cart/CartDrawer';
+import PageEntranceOverlay from '@/components/common/PageEntranceOverlay';
+import ScrollProgress from '@/components/common/ScrollProgress';
 import { siteConfig } from '@/config/site';
 import { safeJsonLd } from '@/lib/security/sanitize';
 
@@ -99,6 +101,13 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
+
+        {/* Luxury Website Entrance Experience */}
+        <PageEntranceOverlay />
+
+        {/* Global Scroll Progress & Back-to-Top Button */}
+        <ScrollProgress />
+
         <CartProvider>
           <div className="flex min-h-screen flex-col">
             <Navbar />
