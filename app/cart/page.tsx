@@ -278,7 +278,7 @@ export default function CartPage() {
 
               {/* Dominant Action: Order on WhatsApp */}
               <a
-                href={whatsappUrl || `https://wa.me/919415160862?text=${encodeURIComponent(whatsappMessage)}`}
+                href={whatsappUrl || `https://wa.me/917080605007?text=${encodeURIComponent(whatsappMessage)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => {

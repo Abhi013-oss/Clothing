@@ -17,8 +17,8 @@ export const siteConfig: SiteSettings = {
   },
   contact: {
     // Read from environment variable or fallback to store merchant WhatsApp
-    whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '919415160862',
-    primaryPhone: process.env.NEXT_PUBLIC_PHONE_NUMBER || '+91 94151 60862',
+    whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '917080605007',
+    primaryPhone: process.env.NEXT_PUBLIC_PHONE_NUMBER || '+91 70806 05007',
     storeHours: 'Monday – Sunday • Chilbila Bazaar, Pratapgarh',
   },
   whatsappCartMode: 'names_and_qty',

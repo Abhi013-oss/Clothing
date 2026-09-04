@@ -27,7 +27,7 @@ export default function ProductCard({ product, variant = 'grid' }: ProductCardPr
   const altText = primaryImage?.altText || product.name;
 
   const whatsappUrl = buildWhatsAppUrl(
-    siteConfig.contact.whatsappNumber || '919415160862',
+    siteConfig.contact.whatsappNumber || '917080605007',
     generateSingleProductMessage(
       product,
       typeof window !== 'undefined' ? window.location.origin : 'https://banwarilalclothhouse.com'
@@ -112,7 +112,7 @@ export default function ProductCard({ product, variant = 'grid' }: ProductCardPr
 
           <div className="flex items-center gap-1.5">
             <a
-              href={whatsappUrl || `https://wa.me/919415160862?text=${encodeURIComponent(product.name)}`}
+              href={whatsappUrl || `https://wa.me/917080605007?text=${encodeURIComponent(product.name)}`}
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}

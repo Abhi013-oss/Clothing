@@ -18,9 +18,19 @@ export function normalizeWhatsAppNumber(rawNumber?: string): string {
   const digits = rawNumber.replace(/\D/g, '');
   if (!digits) return '';
 
+  // If 11 digits starting with 0 (e.g. 07080605007), strip leading 0 and prepend India country code 91
+  if (digits.length === 11 && digits.startsWith('0')) {
+    return `91${digits.slice(1)}`;
+  }
+
   // If 10 digits, default to India country code 91
   if (digits.length === 10) {
     return `91${digits}`;
+  }
+
+  // If already 12 digits starting with 91 (India)
+  if (digits.length === 12 && digits.startsWith('91')) {
+    return digits;
   }
 
   // Standard international phone numbers are between 10 and 15 digits

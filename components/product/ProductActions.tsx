@@ -68,7 +68,7 @@ export default function ProductActions({ product }: ProductActionsProps) {
 
         {/* Secondary High-Intent Action: Order on WhatsApp */}
         <a
-          href={singleWhatsAppUrl || `https://wa.me/919415160862?text=${encodeURIComponent(singleWhatsAppMessage)}`}
+          href={singleWhatsAppUrl || `https://wa.me/917080605007?text=${encodeURIComponent(singleWhatsAppMessage)}`}
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => {
@@ -121,7 +121,7 @@ export default function ProductActions({ product }: ProductActionsProps) {
           </button>
 
           <a
-            href={singleWhatsAppUrl || `https://wa.me/919415160862?text=${encodeURIComponent(singleWhatsAppMessage)}`}
+            href={singleWhatsAppUrl || `https://wa.me/917080605007?text=${encodeURIComponent(singleWhatsAppMessage)}`}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => {
