@@ -14,6 +14,7 @@ export const siteConfig: SiteSettings = {
     latitude: 25.9557296,
     longitude: 82.0070317,
     googleMapsUrl: 'https://www.google.com/maps/place/BANWARILAL+CLOTH+HOUSE/@25.9557296,82.0044568,922m/',
+    googleReviewsUrl: 'https://www.google.com/maps/place/BANWARILAL+CLOTH+HOUSE/@25.9557296,82.0044568,922m/data=!3m1!1e3!4m8!3m7!1s0x399a914be3f9fd9d:0x3d4e2eee5c7b4562!8m2!3d25.9557296!4d82.0070317!9m1!1b1!16s%2Fg%2F11lgyrhdz_?entry=ttu',
   },
   contact: {
     // Read from environment variable or fallback to store merchant WhatsApp

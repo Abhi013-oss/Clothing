@@ -99,8 +99,8 @@ export default function ProductActions({ product }: ProductActionsProps) {
       </div>
 
       {/* Mobile Fixed Sticky Bottom Action Bar (Mobile viewports only) */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-30 p-3 bg-canvas/95 backdrop-blur-md border-t border-ink-border shadow-drawer flex items-center justify-between gap-3">
-        <div className="flex flex-col min-w-0">
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-30 px-3.5 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] bg-canvas/95 backdrop-blur-md border-t border-ink-border shadow-drawer flex items-center justify-between gap-2.5">
+        <div className="flex flex-col min-w-0 pr-2">
           <span className="font-serif text-sm font-medium text-ink truncate">
             {formatPrice(product.price)}
           </span>
@@ -112,7 +112,7 @@ export default function ProductActions({ product }: ProductActionsProps) {
         <div className="flex items-center gap-2 flex-1 justify-end">
           <button
             onClick={handleAddToCart}
-            className={`py-3 px-4 rounded-sm text-xs font-semibold transition-colors ${
+            className={`min-h-[44px] py-2.5 px-3.5 sm:px-4 rounded-sm text-xs font-semibold transition-colors flex items-center justify-center flex-shrink-0 ${
               isAdded ? 'bg-status-success text-white' : 'bg-ink text-white'
             }`}
             aria-label="Add to bag"
@@ -127,7 +127,7 @@ export default function ProductActions({ product }: ProductActionsProps) {
             onClick={() => {
               trackWhatsAppDispatch({ source: 'product', productId: product.id });
             }}
-            className="py-3 px-4 rounded-sm bg-brand-whatsapp text-white text-xs font-semibold flex items-center gap-1.5 shadow-sm"
+            className="min-h-[44px] py-2.5 px-3.5 sm:px-4 rounded-sm bg-brand-whatsapp text-white text-xs font-semibold flex items-center justify-center gap-1.5 shadow-sm flex-shrink-0"
             aria-label="Order on WhatsApp"
           >
             <MessageCircle className="w-3.5 h-3.5" />

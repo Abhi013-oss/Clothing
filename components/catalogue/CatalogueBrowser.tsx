@@ -284,7 +284,7 @@ export default function CatalogueBrowser({
         <div className="flex md:hidden items-center justify-between gap-3 pt-2 border-t border-ink-border/50">
           <button
             onClick={() => setIsMobileFilterOpen(true)}
-            className="flex-1 flex items-center justify-center gap-2 py-2.5 px-4 bg-canvas-muted text-ink text-xs font-semibold rounded-sm border border-ink-border"
+            className="flex-1 min-h-[44px] flex items-center justify-center gap-2 py-2.5 px-4 bg-canvas-muted text-ink text-xs font-semibold rounded-sm border border-ink-border hover:bg-canvas-sand transition-colors"
           >
             <SlidersHorizontal className="w-3.5 h-3.5" />
             <span>Filters {activeFiltersCount > 0 && `(${activeFiltersCount})`}</span>
@@ -293,7 +293,7 @@ export default function CatalogueBrowser({
           <select
             value={sort}
             onChange={(e) => handleSortChange(e.target.value as SortOption)}
-            className="flex-1 py-2.5 px-3 bg-canvas-muted border border-ink-border rounded-sm text-xs font-semibold text-ink"
+            className="flex-1 min-h-[44px] py-2.5 px-3 bg-canvas-muted border border-ink-border rounded-sm text-xs font-semibold text-ink focus:outline-none focus:ring-1 focus:ring-accent-gold"
             aria-label="Mobile sort selection"
           >
             <option value="featured">Featured</option>

@@ -116,7 +116,7 @@ export default function HeroSection() {
             </div>
 
             {/* Storefront Landmark Confirmation */}
-            <div className="mt-10 pt-6 border-t border-ink-border/60 flex items-center gap-6 text-xs text-ink-secondary">
+            <div className="mt-8 sm:mt-10 pt-6 border-t border-ink-border/60 flex flex-wrap items-center gap-4 sm:gap-6 text-xs text-ink-secondary">
               <div>
                 <span className="font-semibold text-ink">Physical Store:</span> Near Hanuman Mandir, Chilbila
               </div>

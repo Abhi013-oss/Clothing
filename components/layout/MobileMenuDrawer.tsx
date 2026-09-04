@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { X, MapPin, Phone, MessageCircle, ArrowRight } from 'lucide-react';
+import { X, MapPin, Phone, MessageCircle, ArrowRight, Star } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 import { buildWhatsAppUrl, generateGeneralEnquiryMessage } from '@/lib/whatsapp/generator';
 
@@ -148,6 +148,19 @@ export default function MobileMenuDrawer({ isOpen, onClose }: MobileMenuDrawerPr
             >
               <Phone className="w-4 h-4 text-ink-secondary" />
               <span>Call Store: {siteConfig.contact.primaryPhone}</span>
+            </a>
+          )}
+
+          {siteConfig.address.googleReviewsUrl && (
+            <a
+              href={siteConfig.address.googleReviewsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full flex items-center justify-center gap-2 py-2.5 px-4 text-xs font-semibold text-ink bg-canvas-pure border border-ink-border rounded-sm hover:bg-canvas-sand transition-colors shadow-sm"
+              aria-label="Write a Google Review"
+            >
+              <Star className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
+              <span>Write a Google Review</span>
             </a>
           )}
 

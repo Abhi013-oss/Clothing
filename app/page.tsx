@@ -5,6 +5,7 @@ import CategoryGrid from '@/components/home/CategoryGrid';
 import FeaturedGrid from '@/components/home/FeaturedGrid';
 import BrandStory from '@/components/home/BrandStory';
 import VisualShowcase from '@/components/home/VisualShowcase';
+import GoogleReviewsSection from '@/components/home/GoogleReviewsSection';
 import StoreLocationCard from '@/components/home/StoreLocationCard';
 import FinalCTA from '@/components/home/FinalCTA';
 import { siteConfig } from '@/config/site';
@@ -35,10 +36,13 @@ export default function HomePage() {
       {/* 5. Editorial Lookbook Fabric Texture Showcase */}
       <VisualShowcase />
 
-      {/* 6. Physical Store Location & Google Maps Card */}
+      {/* 6. Authentic Google Customer Reviews & Direct Rating Option */}
+      <GoogleReviewsSection />
+
+      {/* 7. Physical Store Location & Google Maps Card */}
       <StoreLocationCard />
 
-      {/* 7. Final Action & WhatsApp Order Trigger */}
+      {/* 8. Final Action & WhatsApp Order Trigger */}
       <FinalCTA />
     </div>
   );

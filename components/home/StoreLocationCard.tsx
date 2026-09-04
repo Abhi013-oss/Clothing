@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { MapPin, Phone, MessageCircle, Navigation, Clock } from 'lucide-react';
+import { MapPin, Phone, MessageCircle, Navigation, Clock, Star } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 import { buildWhatsAppUrl, generateGeneralEnquiryMessage } from '@/lib/whatsapp/generator';
 
@@ -86,6 +86,19 @@ export default function StoreLocationCard() {
                   >
                     <Phone className="w-4 h-4 text-ink-secondary" />
                     <span>Call Store</span>
+                  </a>
+                )}
+
+                {siteConfig.address.googleReviewsUrl && (
+                  <a
+                    href={siteConfig.address.googleReviewsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-3.5 rounded-sm bg-canvas-pure text-ink font-sans text-xs sm:text-sm font-semibold border border-ink-border hover:bg-canvas-sand transition-colors shadow-sm"
+                    aria-label="Write a Google review for Banwari Lal Cloth House"
+                  >
+                    <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
+                    <span>Write a Google Review</span>
                   </a>
                 )}
               </div>

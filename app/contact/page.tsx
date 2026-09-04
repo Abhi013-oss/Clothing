@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { MapPin, Phone, MessageCircle, Navigation, Clock } from 'lucide-react';
+import { MapPin, Phone, MessageCircle, Navigation, Clock, Star } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 import { buildWhatsAppUrl, generateGeneralEnquiryMessage } from '@/lib/whatsapp/generator';
 
@@ -90,6 +90,36 @@ export default function ContactPage() {
               >
                 <MessageCircle className="w-3.5 h-3.5" />
                 <span>Chat on WhatsApp</span>
+              </a>
+            )}
+          </div>
+        </div>
+
+        {/* Google Reviews Card */}
+        <div className="p-6 bg-canvas-pure border border-ink-border rounded-sm shadow-card-rest md:col-span-2">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <div className="flex items-center gap-1 mb-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                ))}
+                <span className="font-serif text-sm font-bold text-ink ml-1.5">5.0 / 5.0 Google Rating</span>
+              </div>
+              <h2 className="font-serif text-lg font-medium text-ink">Have you visited our Chilbila store?</h2>
+              <p className="font-sans text-xs text-ink-secondary mt-0.5">
+                Share your shopping experience or view authentic reviews from fellow customers on Google Maps.
+              </p>
+            </div>
+            {siteConfig.address.googleReviewsUrl && (
+              <a
+                href={siteConfig.address.googleReviewsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-sm bg-ink text-white font-sans text-xs font-semibold hover:bg-ink-hover transition-colors shadow-sm self-start sm:self-auto flex-shrink-0"
+                aria-label="Write a Google Review"
+              >
+                <span>Write a Google Review</span>
+                <Star className="w-3.5 h-3.5 fill-accent-gold text-accent-gold" />
               </a>
             )}
           </div>

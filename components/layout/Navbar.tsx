@@ -41,9 +41,9 @@ export default function Navbar() {
             {/* Brand Masthead with Official Logo */}
             <Link
               href="/"
-              className="group flex items-center gap-2.5 sm:gap-3.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold rounded-sm"
+              className="group flex items-center gap-2 sm:gap-3.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold rounded-sm min-w-0"
             >
-              <div className="relative w-10 h-10 sm:w-11 sm:h-11 flex-shrink-0 rounded-full overflow-hidden border border-ink-border/80 shadow-sm bg-white">
+              <div className="relative w-9 h-9 sm:w-11 sm:h-11 flex-shrink-0 rounded-full overflow-hidden border border-ink-border/80 shadow-sm bg-white">
                 <Image
                   src="/images/logo.png"
                   alt="Banwari Lal Cloth House Official Logo"
@@ -52,11 +52,11 @@ export default function Navbar() {
                   priority
                 />
               </div>
-              <div className="flex flex-col">
-                <span className="font-serif text-lg sm:text-xl lg:text-2xl font-medium tracking-[0.05em] text-ink uppercase transition-colors group-hover:text-ink-hover">
+              <div className="flex flex-col min-w-0">
+                <span className="font-serif text-base sm:text-xl lg:text-2xl font-medium tracking-[0.02em] sm:tracking-[0.05em] text-ink uppercase transition-colors group-hover:text-ink-hover truncate">
                   {siteConfig.businessName}
                 </span>
-                <span className="font-sans text-[10px] sm:text-xs tracking-[0.14em] uppercase text-ink-secondary">
+                <span className="font-sans text-[9px] sm:text-xs tracking-[0.08em] sm:tracking-[0.14em] uppercase text-ink-secondary truncate">
                   Chilbila, Pratapgarh • Est. {siteConfig.establishedYear}
                 </span>
               </div>

@@ -186,7 +186,7 @@ export default function CartPage() {
                         <button
                           onClick={() => decrementQuantity(item.productId)}
                           disabled={item.quantity <= 1}
-                          className="p-1.5 text-ink-secondary hover:text-ink disabled:opacity-30 disabled:cursor-not-allowed focus:outline-none"
+                          className="p-2 min-w-[34px] min-h-[34px] flex items-center justify-center text-ink-secondary hover:text-ink disabled:opacity-30 disabled:cursor-not-allowed focus:outline-none"
                           aria-label={`Decrease quantity of ${item.productName}`}
                         >
                           <Minus className="w-3.5 h-3.5" />
@@ -197,7 +197,7 @@ export default function CartPage() {
                         <button
                           onClick={() => incrementQuantity(item.productId)}
                           disabled={item.quantity >= 10}
-                          className="p-1.5 text-ink-secondary hover:text-ink disabled:opacity-30 disabled:cursor-not-allowed focus:outline-none"
+                          className="p-2 min-w-[34px] min-h-[34px] flex items-center justify-center text-ink-secondary hover:text-ink disabled:opacity-30 disabled:cursor-not-allowed focus:outline-none"
                           aria-label={`Increase quantity of ${item.productName}`}
                         >
                           <Plus className="w-3.5 h-3.5" />
@@ -214,10 +214,10 @@ export default function CartPage() {
                       {/* Remove Button */}
                       <button
                         onClick={() => removeItem(item.productId)}
-                        className="inline-flex items-center gap-1 text-xs text-ink-muted hover:text-status-error transition-colors focus:outline-none"
+                        className="min-h-[44px] min-w-[44px] inline-flex items-center justify-center gap-1 text-xs text-ink-muted hover:text-status-error transition-colors focus:outline-none"
                         aria-label={`Remove ${item.productName} from bag`}
                       >
-                        <Trash2 className="w-3.5 h-3.5" />
+                        <Trash2 className="w-4 h-4" />
                         <span className="hidden sm:inline">Remove</span>
                       </button>
                     </div>

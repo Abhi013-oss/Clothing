@@ -97,6 +97,19 @@ export default function Footer() {
                   <ArrowUpRight className="w-3 h-3" />
                 </a>
               </li>
+              {siteConfig.address.googleReviewsUrl && (
+                <li>
+                  <a
+                    href={siteConfig.address.googleReviewsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-accent-gold transition-colors inline-flex items-center gap-1 font-medium text-ink"
+                  >
+                    <span>Write a Google Review</span>
+                    <ArrowUpRight className="w-3 h-3 text-accent-gold" />
+                  </a>
+                </li>
+              )}
             </ul>
           </div>
 

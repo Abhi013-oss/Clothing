@@ -12,6 +12,7 @@ export interface SiteSettings {
     latitude: number;
     longitude: number;
     googleMapsUrl: string;
+    googleReviewsUrl?: string;
   };
   contact: {
     whatsappNumber: string;

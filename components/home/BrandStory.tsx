@@ -22,7 +22,7 @@ export default function BrandStory() {
             </div>
 
             {/* Overlapping Floating Badge with Official Store Logo */}
-            <div className="absolute -bottom-6 -right-2 sm:-right-6 bg-canvas-pure p-4 sm:p-5 rounded-sm border border-ink-border shadow-card-hover max-w-[250px] flex items-center gap-3.5">
+            <div className="absolute bottom-3 right-3 sm:-bottom-6 sm:-right-6 bg-canvas-pure p-3.5 sm:p-5 rounded-sm border border-ink-border shadow-card-hover max-w-[220px] sm:max-w-[250px] flex items-center gap-3 sm:gap-3.5">
               <div className="relative w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 rounded-full overflow-hidden border border-ink-border/80 shadow-sm bg-white">
                 <Image
                   src="/images/logo.png"
