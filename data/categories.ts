@@ -62,3 +62,106 @@ export const categories: Category[] = [
     updatedAt: '2024-01-01T00:00:00Z',
   },
 ];
+
+export interface CuratedDepartment {
+  id: string;
+  name: string;
+  tagline: string;
+  badge: string;
+  slug: string;
+  itemCount: string;
+  imageUrl: string;
+}
+
+export const curatedDepartments: CuratedDepartment[] = [
+  {
+    id: 'dep-01',
+    name: 'Banarasi Silk Sarees',
+    tagline: 'Pure Katan Silk & Golden Zari Jaal',
+    badge: 'Handloom Heritage',
+    slug: 'sarees',
+    itemCount: '8 Silks Available',
+    imageUrl: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=900&q=85',
+  },
+  {
+    id: 'dep-02',
+    name: 'Suits & Unstitched Material',
+    tagline: 'Chanderi & Embroidered 3-Piece Sets',
+    badge: 'Festive Resham',
+    slug: 'suits',
+    itemCount: '6 Sets Available',
+    imageUrl: 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=900&q=85',
+  },
+  {
+    id: 'dep-03',
+    name: 'Royal Anarkalis & Kurtis',
+    tagline: 'Flared Georgette & Gota Patti Borders',
+    badge: 'Designer Festive',
+    slug: 'readymade',
+    itemCount: '5 Designs Available',
+    imageUrl: 'https://images.unsplash.com/photo-1584273143981-41c073dfe8f8?auto=format&fit=crop&w=900&q=85',
+  },
+  {
+    id: 'dep-04',
+    name: 'Bridal Lehengas & Gowns',
+    tagline: 'Micro-Velvet & Heavy Zardosi Craft',
+    badge: 'Wedding Exclusive',
+    slug: 'readymade',
+    itemCount: 'Bespoke Tailoring',
+    imageUrl: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=900&q=85',
+  },
+  {
+    id: 'dep-05',
+    name: 'Organza & Sheer Sarees',
+    tagline: 'Pastel Cutwork & Sequin Detailing',
+    badge: 'Contemporary Drape',
+    slug: 'sarees',
+    itemCount: 'Modern Festive',
+    imageUrl: 'https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=900&q=85',
+  },
+  {
+    id: 'dep-06',
+    name: 'Handloom Tussar Silk',
+    tagline: 'Wild Textured Silk & Temple Borders',
+    badge: 'Artisanal Weaves',
+    slug: 'sarees',
+    itemCount: 'Heirloom Pieces',
+    imageUrl: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=900&q=85',
+  },
+  {
+    id: 'dep-07',
+    name: 'Everyday Cotton Kurtis',
+    tagline: 'Hand Block Print & Breathable Modal',
+    badge: 'Daily Comfort',
+    slug: 'readymade',
+    itemCount: 'Sizes S to XXL',
+    imageUrl: 'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=900&q=85',
+  },
+  {
+    id: 'dep-08',
+    name: 'Classic Linen Menswear',
+    tagline: '100% Pure Woven Linen Shirts',
+    badge: 'Gentleman Classic',
+    slug: 'menswear',
+    itemCount: 'Tailored Fit',
+    imageUrl: 'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=900&q=85',
+  },
+  {
+    id: 'dep-09',
+    name: 'Italian Suiting Fabrics',
+    tagline: 'Worsted Poly-Wool Houndstooth',
+    badge: 'Bespoke Suiting',
+    slug: 'fabrics',
+    itemCount: '3.0m Suit Length',
+    imageUrl: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=900&q=85',
+  },
+  {
+    id: 'dep-10',
+    name: 'Fine Egyptian Giza Cotton',
+    tagline: 'Silky Long-Staple Shirting Lengths',
+    badge: 'Luxury Weaves',
+    slug: 'fabrics',
+    itemCount: '1.6m Shirt Length',
+    imageUrl: 'https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=900&q=85',
+  },
+];
